@@ -1,0 +1,204 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{6DACF2E1-A883-4AC9-ADCC-EA003625710C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>BO</RootNamespace>
+    <AssemblyName>BO</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <OptionStrict>Off</OptionStrict>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>BO.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>BO.xml</DocumentationFile>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <WarningsAsErrors>
+    </WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio 8\Common7\IDE\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BO classes\Action.vb" />
+    <Compile Include="BO classes\CheckPoint.vb" />
+    <Compile Include="BO classes\File.vb" />
+    <Compile Include="BO classes\GenericObject.vb" />
+    <Compile Include="BO classes\Information.vb" />
+    <Compile Include="BO classes\Language.vb" />
+    <Compile Include="BO classes\LegalValueItem.vb" />
+    <Compile Include="BO classes\Method.vb" />
+    <Compile Include="BO classes\PDAUser.vb" />
+    <Compile Include="BO classes\Report.vb" />
+    <Compile Include="BO classes\ReportColumn.vb" />
+    <Compile Include="Editor Classes\Editors\DataTypeEditor.vb" />
+    <Compile Include="Editor Classes\Editors\FileNameEditor.vb" />
+    <Compile Include="Editor Classes\Editors\LegalValueItemListEditor.vb" />
+    <Compile Include="Editor Classes\Editors\MultiLanguageEditor.vb" />
+    <Compile Include="Editor Classes\Forms\ListEditorFrm.Designer.vb">
+      <DependentUpon>ListEditorFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor Classes\Forms\ListEditorFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor Classes\Forms\MultiLanguage.Designer.vb">
+      <DependentUpon>MultiLanguage.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor Classes\Forms\MultiLanguage.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BO classes\QuestionnaireSet.vb" />
+    <Compile Include="BO classes\ScreenTemplate.vb" />
+    <Compile Include="BO classes\Site.vb" />
+    <Compile Include="ContextClass.vb" />
+    <Compile Include="Editor Classes\Editors\ActionTypeEditor.vb" />
+    <Compile Include="Editor Classes\Editors\ConditionEditor.vb">
+    </Compile>
+    <Compile Include="Editor Classes\ConfigData.vb" />
+    <Compile Include="BO classes\LegalValuesTable.vb" />
+    <Compile Include="Editor Classes\Forms\ConditionForm.Designer.vb">
+      <DependentUpon>ConditionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor Classes\Forms\ConditionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor Classes\Forms\CodeEditorForm.Designer.vb">
+      <DependentUpon>CodeEditorForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor Classes\Forms\CodeEditorForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Editor Classes\Editors\LegalValuesEditor.vb" />
+    <Compile Include="Editor Classes\Editors\ScreenTemplateEditor.vb" />
+    <Compile Include="Editor Classes\Editors\CodeEditor.vb" />
+    <Compile Include="Editor Classes\Editors\VariableScopeEditor.vb" />
+    <Compile Include="ISelfValidate.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="BO classes\SectionItem.vb" />
+    <Compile Include="BO classes\Question.vb" />
+    <Compile Include="BO classes\Questionnaire.vb" />
+    <Compile Include="BO classes\Section.vb" />
+    <Compile Include="BO classes\Study.vb" />
+    <Compile Include="BO classes\Subject.vb" />
+    <Compile Include="BO classes\Variable.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Editor Classes\Forms\ConditionForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConditionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor Classes\Forms\ListEditorFrm.resx">
+      <DependentUpon>ListEditorFrm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor Classes\Forms\MultiLanguage.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MultiLanguage.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor Classes\Forms\CodeEditorForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>CodeEditorForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1289575277_Add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1289575290_Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_search[1]1.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

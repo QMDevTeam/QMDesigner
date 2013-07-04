@@ -40,7 +40,7 @@ Public Class Section
             If Me.Parent IsNot Nothing AndAlso Me.Parent.Parent IsNot Nothing Then
                 Return Me.Parent.Parent.DataBaseID
             Else
-                Return "N/A"
+                Return -1
             End If
         End Get
     End Property
@@ -52,7 +52,7 @@ Public Class Section
             If Me.Parent IsNot Nothing Then
                 Return Me.Parent.DataBaseID
             Else
-                Return "N/A"
+                Return -1
             End If
         End Get
     End Property

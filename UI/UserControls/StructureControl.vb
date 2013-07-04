@@ -12,6 +12,15 @@ Public Class StructureControl
     'Preview control of Main Form
     Public uxPreviewControl As PreviewControl
     Public uxPropertyGrid As PropertyGrid
+    Public uxCtlQuestionnaireSet As CtlQuestionnaireSet
+    Public uxCtlQuestionnaire As CtlQuestionnaire
+    Public uxCtlSection As CtlSection
+    Public uxCtlVariable As CtlVariable
+    Public uxCtlStudy As CtlStudy
+    Public uxCtlCheckPoint As CtlCheckpoint
+    Public uxCtlInformation As CtlInformation
+    Public uxCtlQuestion As CtlQuestions
+
 
     ' Drag and drop.
     Private _dragOverStartTime As DateTime
@@ -157,6 +166,85 @@ Public Class StructureControl
 
         Next
         Return n
+
+    End Function
+
+    Public Function DisplayAndHideControls(ControlName As String)
+
+        Select Case ControlName
+            Case "BO.Study"
+                Me.uxCtlQuestionnaire.Visible = False
+                Me.uxCtlSection.Visible = False
+                Me.uxCtlQuestionnaireSet.Visible = False
+                Me.uxCtlVariable.Visible = False
+                Me.uxCtlStudy.Visible = True
+                Me.uxCtlCheckPoint.Visible = False
+                Me.uxCtlInformation.Visible = False
+                Me.uxCtlQuestion.Visible = False
+            Case "BO.QuestionnaireSet"
+                Me.uxCtlQuestionnaire.Visible = False
+                Me.uxCtlSection.Visible = False
+                Me.uxCtlQuestionnaireSet.Visible = True
+                Me.uxCtlVariable.Visible = False
+                Me.uxCtlStudy.Visible = False
+                Me.uxCtlCheckPoint.Visible = False
+                Me.uxCtlInformation.Visible = False
+                Me.uxCtlQuestion.Visible = False
+            Case "BO.Questionnaire"
+                Me.uxCtlQuestionnaire.Visible = True
+                Me.uxCtlQuestionnaireSet.Visible = False
+                Me.uxCtlSection.Visible = False
+                Me.uxCtlVariable.Visible = False
+                Me.uxCtlStudy.Visible = False
+                Me.uxCtlCheckPoint.Visible = False
+                Me.uxCtlInformation.Visible = False
+                Me.uxCtlQuestion.Visible = False
+            Case "BO.Section"
+                Me.uxCtlQuestionnaire.Visible = False
+                Me.uxCtlSection.Visible = True
+                Me.uxCtlQuestionnaireSet.Visible = False
+                Me.uxCtlVariable.Visible = False
+                Me.uxCtlStudy.Visible = False
+                Me.uxCtlCheckPoint.Visible = False
+                Me.uxCtlInformation.Visible = False
+                Me.uxCtlQuestion.Visible = False
+            Case "BO.Variable"
+                Me.uxCtlQuestionnaire.Visible = False
+                Me.uxCtlSection.Visible = False
+                Me.uxCtlQuestionnaireSet.Visible = False
+                Me.uxCtlVariable.Visible = True
+                Me.uxCtlStudy.Visible = False
+                Me.uxCtlCheckPoint.Visible = False
+                Me.uxCtlInformation.Visible = False
+                Me.uxCtlQuestion.Visible = False
+            Case "BO.Question"
+                Me.uxCtlQuestionnaire.Visible = False
+                Me.uxCtlSection.Visible = False
+                Me.uxCtlQuestionnaireSet.Visible = False
+                Me.uxCtlVariable.Visible = False
+                Me.uxCtlStudy.Visible = False
+                Me.uxCtlCheckPoint.Visible = False
+                Me.uxCtlInformation.Visible = False
+                Me.uxCtlQuestion.Visible = True
+            Case "BO.CheckPoint"
+                Me.uxCtlQuestionnaire.Visible = False
+                Me.uxCtlSection.Visible = False
+                Me.uxCtlQuestionnaireSet.Visible = False
+                Me.uxCtlVariable.Visible = False
+                Me.uxCtlStudy.Visible = False
+                Me.uxCtlCheckPoint.Visible = True
+                Me.uxCtlInformation.Visible = False
+                Me.uxCtlQuestion.Visible = False
+            Case "BO.Information"
+                Me.uxCtlQuestionnaire.Visible = False
+                Me.uxCtlSection.Visible = False
+                Me.uxCtlQuestionnaireSet.Visible = False
+                Me.uxCtlVariable.Visible = False
+                Me.uxCtlStudy.Visible = False
+                Me.uxCtlCheckPoint.Visible = False
+                Me.uxCtlInformation.Visible = True
+                Me.uxCtlQuestion.Visible = False
+        End Select
 
     End Function
 
@@ -321,12 +409,28 @@ Public Class StructureControl
     Private Sub uxOutline_CellSelected(ByVal sender As System.Object, ByVal e As DevComponents.AdvTree.AdvTreeCellEventArgs) Handles uxOutline.CellSelected
 
         If Me.uxOutline.SelectedNode.Tag Is Nothing Then
-
-            Me.uxPropertyGrid.SelectedObject = Me.uxOutline.SelectedNode.Parent.Tag
-
+            e.Cell.Tag = Me.uxOutline.SelectedNode.Parent.Tag
         Else
+            Select Case SelectedAdvNode.TagType.FullName
+                Case "BO.Study"
+                    Me.uxCtlStudy.PopulateStudy(Me.uxOutline.SelectedNode.Tag)
+                Case "BO.QuestionnaireSet"
+                    Me.uxCtlQuestionnaireSet.PopulateQuestionnaireSet(Me.uxOutline.SelectedNode.Tag)
+                Case "BO.Questionnaire"
+                    Me.uxCtlQuestionnaire.PopulateQuestionnaire(Me.uxOutline.SelectedNode.Tag)
+                Case "BO.Section"
+                    Me.uxCtlSection.PopulateSection(Me.uxOutline.SelectedNode.Tag)
+                Case "BO.Variable"
+                    Me.uxCtlVariable.PopulateVariable(Me.uxOutline.SelectedNode.Tag)
+                Case "BO.Question"
+                    Me.uxCtlQuestion.PopulateQuestion(Me.uxOutline.SelectedNode.Tag)
+                Case ("BO.Information")
+                    Me.uxCtlInformation.PopulateInformation(Me.uxOutline.SelectedNode.Tag)
+                Case "BO.CheckPoint"
+                    Me.uxCtlCheckPoint.PopulateCheckPoint(Me.uxOutline.SelectedNode.Tag)
+            End Select
 
-            Me.uxPropertyGrid.SelectedObject = Me.uxOutline.SelectedNode.Tag
+            Me.DisplayAndHideControls(SelectedAdvNode.TagType.FullName)
 
         End If
 
@@ -402,7 +506,7 @@ Public Class StructureControl
 
     Private Sub AddQuestionnaireSetToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddQuestionnaireSetToolStripMenuItem.Click, QuestionnaireSetToolStripMenuItem.Click
 
-        Dim newNode As New AdvNode(newObjectEditor.Execute(New BO.QuestionnaireSet(), Me.SelectedAdvNode))
+        Dim newNode As New AdvNode(FrmQuestionnaireSet.AddQuestionnaireSetItems(New BO.QuestionnaireSet()))
         If newNode.Tag Is Nothing Then Exit Sub
         Dim index As Integer
         Dim parentNode As AdvNode = Nothing
@@ -440,7 +544,7 @@ Public Class StructureControl
 
     Private Sub AddQuestionnaireToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddQuestionnaireToolStripMenuItem.Click, QuestionnarieToolStripMenuItem.Click
 
-        Dim newNode As New AdvNode(newObjectEditor.Execute(New BO.Questionnaire(), Me.SelectedAdvNode))
+        Dim newNode As New AdvNode(FrmQuestionnaire.AddQuestionnaireItems(New BO.Questionnaire(), Me.SelectedAdvNode))
         If newNode.Tag Is Nothing Then Exit Sub
         Dim index As Integer
         Dim parentNode As AdvNode
@@ -478,7 +582,7 @@ Public Class StructureControl
 
     Private Sub AddSectionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddSectionToolStripMenuItem.Click, SectionToolStripMenuItem.Click
 
-        Dim newNode As New AdvNode(newObjectEditor.Execute(New BO.Section(), Me.SelectedAdvNode))
+        Dim newNode As New AdvNode(FrmSection.AddSectionItems(New BO.Section(), Me.SelectedAdvNode))
         If newNode.Tag Is Nothing Then Exit Sub
         Dim index As Integer
         Dim parentNode As AdvNode
@@ -516,7 +620,7 @@ Public Class StructureControl
 
     Private Sub AddQuestionToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddQuestionToolStripMenuItem.Click, QuestionToolStripMenuItem.Click
 
-        Dim newNode As New AdvNode(newObjectEditor.Execute(New BO.Question(), Me.SelectedAdvNode))
+        Dim newNode As New AdvNode(FrmPropertyQuestions.Execute(New BO.Question()))
         If newNode.Tag Is Nothing Then Exit Sub
         Dim index As Integer
         Dim parentNode As AdvNode
@@ -554,7 +658,7 @@ Public Class StructureControl
 
     Private Sub AddCheckpointToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddCheckpointToolStripMenuItem.Click, CheckpointToolStripMenuItem.Click
 
-        Dim newNode As New AdvNode(newObjectEditor.Execute(New BO.CheckPoint(), Me.SelectedAdvNode))
+        Dim newNode As New AdvNode(FrmPropertyCheckpoint.Execute(New BO.CheckPoint()))
         If newNode.Tag Is Nothing Then Exit Sub
         Dim index As Integer
         Dim parentNode As AdvNode
@@ -592,7 +696,7 @@ Public Class StructureControl
 
     Private Sub AddInformationToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles AddInformationToolStripMenuItem.Click, InformationToolStripMenuItem.Click
 
-        Dim newNode As New AdvNode(newObjectEditor.Execute(New BO.Information(), Me.SelectedAdvNode))
+        Dim newNode As New AdvNode(FrmPropertyInformation.Execute(New BO.Information()))
         If newNode.Tag Is Nothing Then Exit Sub
         Dim index As Integer
         Dim parentNode As AdvNode
@@ -643,7 +747,7 @@ Public Class StructureControl
 
         If node.Tag.HasVariables Then
 
-            Dim newNode As New AdvNode(newObjectEditor.Execute(New BO.Variable(), Me.SelectedAdvNode))
+            Dim newNode As New AdvNode(FrmVariable.AddVariableItems(New BO.Variable()))
             If newNode.Tag Is Nothing Then Exit Sub
             newNode.RefreshUI()
 

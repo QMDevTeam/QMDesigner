@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -24,6 +24,12 @@
     <GenerateManifests>true</GenerateManifests>
     <SignManifests>false</SignManifests>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -35,7 +41,9 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <AutorunEnabled>true</AutorunEnabled>
+    <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -45,7 +53,8 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Designer.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -54,7 +63,11 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>Designer.xml</DocumentationFile>
-    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
@@ -127,6 +140,97 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NewImplementation\CtlCheckpoint.Designer.vb">
+      <DependentUpon>CtlCheckpoint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\CtlCheckpoint.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\CtlInformation.Designer.vb">
+      <DependentUpon>CtlInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\CtlInformation.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\CtlQuestionnaire.Designer.vb">
+      <DependentUpon>CtlQuestionnaire.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\CtlQuestionnaire.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\CtlQuestionnaireSet.designer.vb">
+      <DependentUpon>CtlQuestionnaireSet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\CtlQuestionnaireSet.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\CtlQuestions.Designer.vb">
+      <DependentUpon>CtlQuestions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\CtlQuestions.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\CtlSection.Designer.vb">
+      <DependentUpon>CtlSection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\CtlSection.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\CtlStudy.Designer.vb">
+      <DependentUpon>CtlStudy.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\CtlStudy.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\CtlVariable.Designer.vb">
+      <DependentUpon>CtlVariable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\CtlVariable.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\FrmPropertyCheckpoint.Designer.vb">
+      <DependentUpon>FrmPropertyCheckpoint.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\FrmPropertyCheckpoint.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\FrmPropertyInformation.Designer.vb">
+      <DependentUpon>FrmPropertyInformation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\FrmPropertyInformation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\FrmPropertyQuestions.Designer.vb">
+      <DependentUpon>FrmPropertyQuestions.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\FrmPropertyQuestions.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\FrmQuestionarySet.Designer.vb">
+      <DependentUpon>FrmQuestionarySet.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\FrmQuestionarySet.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\FrmQuestionnaire.Designer.vb">
+      <DependentUpon>FrmQuestionnaire.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\FrmQuestionnaire.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\FrmSection.Designer.vb">
+      <DependentUpon>FrmSection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\FrmSection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\FrmVariable.Designer.vb">
+      <DependentUpon>FrmVariable.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImplementation\FrmVariable.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewImplementation\Logic.vb" />
     <Compile Include="SearchForm.Designer.vb">
       <DependentUpon>SearchForm.vb</DependentUpon>
     </Compile>
@@ -169,6 +273,51 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\CtlCheckpoint.resx">
+      <DependentUpon>CtlCheckpoint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\CtlInformation.resx">
+      <DependentUpon>CtlInformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\CtlQuestionnaire.resx">
+      <DependentUpon>CtlQuestionnaire.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\CtlQuestionnaireSet.resx">
+      <DependentUpon>CtlQuestionnaireSet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\CtlQuestions.resx">
+      <DependentUpon>CtlQuestions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\CtlSection.resx">
+      <DependentUpon>CtlSection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\CtlStudy.resx">
+      <DependentUpon>CtlStudy.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\CtlVariable.resx">
+      <DependentUpon>CtlVariable.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\FrmPropertyCheckpoint.resx">
+      <DependentUpon>FrmPropertyCheckpoint.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\FrmPropertyInformation.resx">
+      <DependentUpon>FrmPropertyInformation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\FrmPropertyQuestions.resx">
+      <DependentUpon>FrmPropertyQuestions.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\FrmQuestionarySet.resx">
+      <DependentUpon>FrmQuestionarySet.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\FrmQuestionnaire.resx">
+      <DependentUpon>FrmQuestionnaire.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\FrmSection.resx">
+      <DependentUpon>FrmSection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImplementation\FrmVariable.resx">
+      <DependentUpon>FrmVariable.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SearchForm.resx">
       <DependentUpon>SearchForm.vb</DependentUpon>
       <SubType>Designer</SubType>
@@ -183,6 +332,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -236,10 +386,20 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
       <Visible>False</Visible>
       <ProductName>.NET Framework 2.0</ProductName>
       <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
@@ -250,6 +410,7 @@
       <TargetPath>
       </TargetPath>
       <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="Microsoft.Vbe.Interop">
@@ -259,6 +420,7 @@
       <TargetPath>
       </TargetPath>
       <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="office">
@@ -268,6 +430,7 @@
       <TargetPath>
       </TargetPath>
       <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="stdole">
@@ -277,6 +440,7 @@
       <TargetPath>
       </TargetPath>
       <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
     <PublishFile Include="System.Data.SqlServerCe">
@@ -286,6 +450,7 @@
       <TargetPath>
       </TargetPath>
       <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
       <FileType>Assembly</FileType>
     </PublishFile>
   </ItemGroup>
@@ -327,6 +492,7 @@
     <None Include="Resources\decrease_indent[1].png" />
     <None Include="Resources\increase_indent[1].png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

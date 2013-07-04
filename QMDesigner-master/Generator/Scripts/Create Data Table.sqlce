@@ -1,0 +1,33 @@
+CREATE TABLE {tableName}(
+
+	CONSTRAINT PK_{tableName} PRIMARY KEY (SubjectID,SubjectQuestionnaireInstanceID),
+
+	SubjectID						uniqueidentifier NOT NULL,
+	SubjectQuestionnaireInstanceID	tinyint NOT NULL,
+	SubjectCompletedRecord			bit NOT NULL,
+	ForDeletion						bit NOT NULL,
+
+	PDAInsertUser			nvarchar(50) NOT NULL,
+	PDAInsertDate			datetime NOT NULL,
+	PDAInsertVersion		nvarchar(50) NOT NULL,
+	PDAInsertSN				nvarchar(50) NOT NULL,
+	PDAInsertPDAName		nvarchar(50) NOT NULL,
+
+	PDALastModifUser		nvarchar(50),
+	PDALastModifDate		datetime,
+	PDALastModifVersion		nvarchar(50),
+	PDALastModifSN			nvarchar(50),
+	PDALastModifPDAName		nvarchar(50),
+
+	PDALastUploadUser		nvarchar(50),
+	PDALastUploadDate		datetime,
+	PDALastUploadVersion	nvarchar(50),
+	PDALastUploadSN			nvarchar(50),
+	PDALastUploadPDAName	nvarchar(50)
+
+
+	/* Add User Record Data Columns here */
+
+	/* Add derived, calculated or asigned Columns here */
+
+);
