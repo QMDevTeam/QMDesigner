@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="Main_structurePreviewSplitter_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">215, 25</Value>
+    </Setting>
+    <Setting Name="Main_PreviewProperyGridSplitter_Location" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">602, 25</Value>
+    </Setting>
+    <Setting Name="Main_StructureControl1_Size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">215, 456</Value>
+    </Setting>
+    <Setting Name="Main_uxPropertyGrid_Size" Type="System.Drawing.Size" Scope="User">
+      <Value Profile="(Default)">251, 456</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

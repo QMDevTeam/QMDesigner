@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -22,6 +22,28 @@
     </SccProvider>
     <OptionStrict>Off</OptionStrict>
     <SignAssembly>true</SignAssembly>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,9 +52,10 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>BO.xml</DocumentationFile>
-    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -41,9 +64,10 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>BO.xml</DocumentationFile>
-    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</NoWarn>
+    <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42353,42354,42355</NoWarn>
     <WarningsAsErrors>
     </WarningsAsErrors>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevComponents.DotNetBar2, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
@@ -52,10 +76,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.SqlServerCe, Version=9.0.242.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\..\..\..\Program Files\Microsoft Visual Studio 8\Common7\IDE\System.Data.SqlServerCe.dll</HintPath>
-    </Reference>
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -124,6 +145,30 @@
     <Compile Include="Editor Classes\Editors\ScreenTemplateEditor.vb" />
     <Compile Include="Editor Classes\Editors\CodeEditor.vb" />
     <Compile Include="Editor Classes\Editors\VariableScopeEditor.vb" />
+    <Compile Include="Editor Classes\UserControls\CtlFiles.Designer.vb">
+      <DependentUpon>CtlFiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor Classes\UserControls\CtlFiles.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editor Classes\UserControls\CtlMethod.Designer.vb">
+      <DependentUpon>CtlMethod.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor Classes\UserControls\CtlMethod.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editor Classes\UserControls\CtlPdaReports.Designer.vb">
+      <DependentUpon>CtlPdaReports.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor Classes\UserControls\CtlPdaReports.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editor Classes\UserControls\CtlPDAUsers.Designer.vb">
+      <DependentUpon>CtlPDAUsers.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editor Classes\UserControls\CtlPDAUsers.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Include="ISelfValidate.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -165,6 +210,18 @@
       <SubType>Designer</SubType>
       <DependentUpon>CodeEditorForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Editor Classes\UserControls\CtlFiles.resx">
+      <DependentUpon>CtlFiles.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor Classes\UserControls\CtlMethod.resx">
+      <DependentUpon>CtlMethod.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor Classes\UserControls\CtlPdaReports.resx">
+      <DependentUpon>CtlPdaReports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editor Classes\UserControls\CtlPDAUsers.resx">
+      <DependentUpon>CtlPDAUsers.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
@@ -192,6 +249,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon_search[1]1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

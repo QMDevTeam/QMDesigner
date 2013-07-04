@@ -81,6 +81,33 @@ Public Class ListEditorFrm
 
     End Sub
 
+    Private Sub DisplayAndHideControls(ControlName As String)
+
+        Select Case ControlName
+            Case "BO.Report"
+                Me.PdaReports.Visible = True
+                Me.Files.Visible = False
+                Me.Method.Visible = False
+                Me.PDAUsers.Visible = False
+            Case "BO.File"
+                Me.PdaReports.Visible = False
+                Me.Files.Visible = True
+                Me.Method.Visible = False
+                Me.PDAUsers.Visible = False
+            Case "BO.Method"
+                Me.PdaReports.Visible = False
+                Me.Files.Visible = False
+                Me.Method.Visible = True
+                Me.PDAUsers.Visible = False
+            Case "BO.PDAUser"
+                Me.PdaReports.Visible = False
+                Me.Files.Visible = False
+                Me.Method.Visible = False
+                Me.PDAUsers.Visible = True
+        End Select
+
+    End Sub
+
 
     ''' <summary>
     ''' Wraps the value in a node and adds it into the tree.
@@ -175,7 +202,16 @@ Public Class ListEditorFrm
 
                 uxListBox.SelectedNode.Remove()
 
+                If uxListBox.Nodes.Count <= 0 Then
+                    Files.Visible = False
+                    PdaReports.Visible = False
+                    Method.Visible = False
+                    PDAUsers.Visible = False
+                End If
+
             End If
+
+           
         End If
 
     End Sub
@@ -189,10 +225,22 @@ Public Class ListEditorFrm
     ''' <remarks>Validates the previous selection.</remarks>
 
     Private Sub uxListBox_BeforeNodeSelect(ByVal sender As System.Object, ByVal e As DevComponents.AdvTree.AdvTreeNodeCancelEventArgs) Handles uxListBox.BeforeNodeSelect
+        If uxListBox.SelectedNode IsNot Nothing Then
 
-        If AdvPropertyGrid1.SelectedObject IsNot Nothing AndAlso AdvPropertyGrid1.SelectedObject.GetType().GetInterface("ISelfValidate") IsNot Nothing Then
+            If uxListBox.SelectedNode.Tag.GetType().GetInterface("ISelfValidate") IsNot Nothing Then
+                Select Case uxListBox.SelectedNode.Tag.GetType().FullName
+                    Case "BO.Report"
+                        uxListBox.SelectedNode.Tag = PdaReports.SaveChanges()
+                    Case "BO.File"
+                        uxListBox.SelectedNode.Tag = Files.SaveChanges()
+                    Case "BO.Method"
+                        uxListBox.SelectedNode.Tag = Method.SaveChanges()
+                    Case "BO.PDAUser"
+                        uxListBox.SelectedNode.Tag = PDAUsers.SaveChanges()
+                End Select
 
-            e.Cancel = Not CType(AdvPropertyGrid1.SelectedObject, ISelfValidate).IsValid()
+                e.Cancel = Not CType(uxListBox.SelectedNode.Tag, ISelfValidate).IsValid()
+            End If
 
         End If
 
@@ -212,8 +260,18 @@ Public Class ListEditorFrm
             AdvPropertyGrid1.SelectedObject = Nothing
 
         Else
+            Select Case uxListBox.SelectedNode.Tag.GetType().FullName
+                Case "BO.Report"
+                    PdaReports.PopulatePdaReports(uxListBox.SelectedNode.Tag)
+                Case "BO.File"
+                    Files.PopulateFile(uxListBox.SelectedNode.Tag)
+                Case "BO.Method"
+                    Method.PopulateMethod(uxListBox.SelectedNode.Tag)
+                Case "BO.PDAUser"
+                    PDAUsers.PopulateUSer(uxListBox.SelectedNode.Tag)
+            End Select
 
-            AdvPropertyGrid1.SelectedObject = uxListBox.SelectedNode.Tag
+            DisplayAndHideControls(uxListBox.SelectedNode.Tag.GetType().FullName)
 
         End If
 
@@ -289,9 +347,22 @@ Public Class ListEditorFrm
 
     Private Sub ListEditorFrm_FormClosing(ByVal sender As System.Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles MyBase.FormClosing
 
-        If AdvPropertyGrid1.SelectedObject IsNot Nothing AndAlso AdvPropertyGrid1.SelectedObject.GetType().GetInterface("ISelfValidate") IsNot Nothing Then
+        If uxListBox.SelectedNode IsNot Nothing Then
 
-            e.Cancel = Not CType(AdvPropertyGrid1.SelectedObject, ISelfValidate).IsValid()
+            Select Case uxListBox.SelectedNode.Tag.GetType().FullName
+                Case "BO.Report"
+                    uxListBox.SelectedNode.Tag = PdaReports.SaveChanges()
+                Case "BO.File"
+                    uxListBox.SelectedNode.Tag = Files.SaveChanges()
+                Case "BO.Method"
+                    uxListBox.SelectedNode.Tag = Method.SaveChanges()
+                Case "BO.PDAUser"
+                    uxListBox.SelectedNode.Tag = PDAUsers.SaveChanges()
+            End Select
+
+            If uxListBox.SelectedNode.Tag IsNot Nothing AndAlso uxListBox.SelectedNode.Tag.GetType().GetInterface("ISelfValidate") IsNot Nothing Then
+                e.Cancel = Not CType(uxListBox.SelectedNode.Tag, ISelfValidate).IsValid()
+            End If
 
         End If
 
@@ -301,4 +372,43 @@ Public Class ListEditorFrm
 #End Region
 
 
+    Private Sub Files_Leave(sender As System.Object, e As System.EventArgs) Handles Files.Leave
+
+        uxListBox.SelectedNode.Tag = Files.SaveChanges()
+        SavePendingChanges(uxListBox.SelectedNode.Tag.ToString())
+
+    End Sub
+
+    Private Sub PdaReports_Leave(sender As System.Object, e As System.EventArgs) Handles PdaReports.Leave
+
+        uxListBox.SelectedNode.Tag = PdaReports.SaveChanges()
+        SavePendingChanges(uxListBox.SelectedNode.Tag.ToString())
+
+    End Sub
+
+    Private Sub Method_Leave(sender As System.Object, e As System.EventArgs) Handles Method.Leave
+
+        uxListBox.SelectedNode.Tag = Method.SaveChanges()
+        SavePendingChanges(uxListBox.SelectedNode.Tag.ToString())
+        
+    End Sub
+
+    Private Sub PDAUsers_Leave(sender As System.Object, e As System.EventArgs) Handles PDAUsers.Leave
+
+        uxListBox.SelectedNode.Tag = PDAUsers.SaveChanges()
+        SavePendingChanges(uxListBox.SelectedNode.Tag.ToString())
+
+    End Sub
+
+    Private Sub SavePendingChanges(ByVal Text As String)
+
+        uxListBox.SelectedNode.Text = Text
+        If Me.dimmedProperty IsNot Nothing AndAlso Me.dimmedProperty.GetValue(uxListBox.SelectedNode.Tag, Nothing) Then
+            uxListBox.SelectedNode.Style = uxListBox.Styles("DimmedStyle")
+        Else
+            uxListBox.SelectedNode.Style = uxListBox.Styles("DefaultStyle")
+        End If
+        If Me.autoSort Then uxListBox.Nodes.Sort()
+
+    End Sub
 End Class

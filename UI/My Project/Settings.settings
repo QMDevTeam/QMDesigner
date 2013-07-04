@@ -3,13 +3,13 @@
   <Profiles />
   <Settings>
     <Setting Name="Main_structurePreviewSplitter_Location" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">215, 25</Value>
+      <Value Profile="(Default)">215, 27</Value>
     </Setting>
     <Setting Name="Main_PreviewProperyGridSplitter_Location" Type="System.Drawing.Point" Scope="User">
-      <Value Profile="(Default)">602, 25</Value>
+      <Value Profile="(Default)">211, 0</Value>
     </Setting>
     <Setting Name="Main_StructureControl1_Size" Type="System.Drawing.Size" Scope="User">
-      <Value Profile="(Default)">215, 456</Value>
+      <Value Profile="(Default)">215, 655</Value>
     </Setting>
     <Setting Name="Main_uxPropertyGrid_Size" Type="System.Drawing.Size" Scope="User">
       <Value Profile="(Default)">251, 456</Value>

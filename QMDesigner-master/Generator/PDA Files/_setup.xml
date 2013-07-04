@@ -1,0 +1,22 @@
+<wap-provisioningdoc>
+  <characteristic type="Install">
+    <parm name="InstallPhase" value="install" />
+    <parm name="OSVersionMin" value="4.0" />
+    <parm name="OSVersionMax" value="6.99" />
+    <parm name="BuildNumberMin" value="0" />
+    <parm name="BuildNumberMax" value="-536870912" />
+    <parm name="AppName" value="{ShortName} QM" />
+    <parm name="NumDirs" value="1" />
+    <parm name="NumFiles" value="{NumFiles}" />
+    <parm name="NumRegKeys" value="{NumRegKeys}" />
+    <parm name="NumRegVals" value="{NumRegVals}" />
+    <parm name="NumShortcuts" value="0" />
+  </characteristic>
+  <characteristic type="FileOperation">
+    <characteristic type="\QM" translation="install">
+      <characteristic type="MakeDir" />
+    </characteristic>
+  </characteristic>
+  <characteristic type="Registry">
+  </characteristic>
+</wap-provisioningdoc>

@@ -1,0 +1,317 @@
+/****************************************/
+	Questionnaire Mobile Designer
+	Version History
+	Created By: Manuel Cordón
+	        On: 2008/Sept/30
+/****************************************/
+
+v2.8.2.0 2011/Dec/9
+* [Change] - Generator: The users were moved to PDAUser table in qmc file.
+* [Feature] Add the reports in the QM file instead of a separate file.
+* [Feature] Add reference files to the QM to be added in the cab files.
+
+V2.8.1.7 2011/Nov/08
+* [BugFix] - Generator: Was creating a new QM folder and deleting the
+	qmd file.
+
+V2.8.1.6 2011/Nov/07
+* [Feature] - Generator: Now Builds the Update cab file for the pda.
+
+V2.8.1.5 2011/Sep/21
+* [Change] - DA: Using data adapters instead of inserts to save the data.
+* [Change] - DA: Read only mode is replaced by making a copy of the qm file
+	and load that instead of the original.
+
+V2.8.1.4 2011/Sep/20
+* [BugFix] - DA: Variable was being stored with visible null and generator
+	wasn't adding them to the qmd file.
+
+V2.8.1.3 2011/Sep/20
+* [BugFix] - DA: Load the visible property for section item.
+* [Change] - Generator: Add the variable to the catalog before generate 
+	the methods for the events.
+* [BugFix] - DA: Store container variables was using external validation
+	instead of custom validation.
+
+V2.8.1.2 2011/Sep/08
+* [BugFix] - DM: Try to use ShortName of a LegalValueItem when ShortName was 
+	null.
+* [BugFix] - DM: Fixed some NullReference of LegalValues
+* [BugFix] - DM: Fixed some NullReference when tring to edit when the query
+	returns 0 rows.
+* [Change] - DM: Improve the way of checking if the table to be imported
+	has the column SubjectQuestionnaireInstanceID
+
+V2.8.1.1 2011/Sep/08
+* [BugFix] - BO: Assigning variable name to a BO.Variable object skips the
+	question validations.
+* [Feature] - UI: The application remembers the size of the structure panel
+	and property grid for the next time it opens.
+
+V2.8.1.0 2011/Sep/06
+* [BugFix] - UI-DataDictionary: Minor fixes in the presentation of the HTML.
+* [BugFix] - UI: The button 'Preview' in the file menu was fixed.
+* [BugFix] - UI: Added code to enable/disable buttons in the toolbar menu.
+* [Change] - BO: Question.VariableName and all the shortNames can be only 
+	legal identifiers.
+* [Change] - DM: Deleted some unused variables.
+* [Change] - DA: Visible property added for questions and info screens.
+* [Feature]: Added the CustomValidationFailMessage to be shown in the PDA
+	when custom validation returns false.
+
+V2.8.0.0 2011/Apr/06
+* [Enhancement] DM: During the import process DM displays a message showing what 
+	is happeing right now.
+* [Enhancement] DM: The Summary of the importation is a DataGrid gouped by Files 
+	imported. Can export the Details of a imported File and the Errors to a CSV file.
+* [Change] - DM: The Import Process was modified. (We need to test the changes 
+	to see if the process was improved).
+* [BugFix] - DM: DM create a set of file when DM connects to a MDF using 
+	UserInstanse.  But when DM trys to connect to a DataBase before to connect
+	to a MDF, the DataManager trys and fails to open a file that doesn'e exist. 
+* [BugFix] - DM: a bug in the connection to a database.  The first connection
+	remains and0 doesn't care if it passed the validation or not.  
+    But DM ask another connection string and DM never use the second connection string.
+* [Feature] - Generator: The generator builds the cab file to install in the 
+	PDA, instead of running a bat file.
+* [Enhancement] - UI: When building bo from UI now only refreshes interface
+	and keeps the node selection.
+* [Change] - DA: Version number now is 3 digits instead of 4.
+* [Change]: Version control was deleted, now is handled in the save button.
+* [BugFix] - Preview: "Save as..." didn't save a indented xml file
+* [BugFix] - DM: In the Import Process the DM didn't fill all the metadata, 
+	now it does.
+* [BugFix] - UI: When finding in legal values and no match was found was 
+	causing an infinite loop.
+* [Feature] - UI: QMGenerator is now integrated in designer, Tools>Generate.
+* [BugFix] - BO: If the language name changed, you lose all the translations.
+* [Change] - DM: Better error messages in the Impot Process 
+* [Change] - DM: Changes in the name of the scripts
+* [Feature] - BO: Implemented ISelfValidate interface, witch validates each 
+	object in bo for consistancy and minimum required information.
+* [Feature] - BO/DA: Added the editor and repository to keep the user list in
+	the qm file.
+* [Feature] - BO: The list editor can keep one property unique.
+* [Feature] - DA: Now Designer can open readonly files.
+* [Change] - DA: Removed all the log tracking of the design.
+* [Change] - Preview: The Source Code is Indented.
+* [Feauter] - DataManager: DataManager Supports the Hidden proprerty of legal 
+	value item class.
+* [Feauter] - DataManager: Updates the tables of the legal value items in the 
+	database (regarding the new Hidden Property).
+* [Feauter] - Preview: Preview Supports the Hidden proprerty of legal value 
+	item class.
+
+v2.7.0.0 2011/Feb/10
+* [BugFix] - BO: List of object editor now allows to reorder the items 
+	in the list.
+* [Feature] - BO: Added Hidden property in legal value item class.
+* [Bug] - DataManager: There is a problem during the import Process when 
+	PDALastModifDate is null (in the server) (The bug wasn't fixed, 
+	it's fixed now).
+
+V2.6.1.0 2011/Feb/07 
+* [Bug] - DataManager: There is a problem during the import Process when PDALastModifDate is null (in the server).
+* [Bug] - BO: No new guid assignation when creating a new legal values table.
+* [Bug] - BO: Moved the asignation of table names after assigning databaseid when creating containers (QS, Q, S).
+* [Bug] - DataManager: The DBInsertUser and DBUpdateUser columns where extended to 50 characters length.
+* [Change] - DA: All comment fields changed type to NText.
+* [Change] - BO: Popup string editor for comment property.
+* [Feature] - UI: Search in Design and legalvalues.
+
+V2.6.0.0 2010/Dec/12
+* [Change] - DA: Now all the legal values are in a single table named LegalValueItem.
+* [Change] - BO: Renamed BO.Phase To BO.SectionItem.
+* [Feature] - DA: Added MethodGuid, Name, MethodType and Code columns to the Method table and the new method class.
+* [Change] - BO: The old method class was renamed to DotNetMethod and a new bo.Method class was created to support the code.
+* [BugFix] - UI: Expand all wasn't expanding the selected node, only the child nodes.
+* [Change] - DataManager: The ConnectionDialog can connect to the User Instance Mode.
+* [Change] - DataManager: When DataManager is initiated it show a dialog asking witch database DataManager will connect to.
+* [BugFix] - DataManager: The forDeletion column was hidden (it shouldn't)
+
+V2.5.0.6 2010/Nov/24
+* [Change] - DataDictionary: The data dictionary was restored to the version that use the API of Excel 2003
+* [Change] - BO: New ToString for BO.Actions. Returns '(New Action)' for empty actions and '{ActionType} {Target}' for filled ones.
+
+V2.5.0.5 2010/Nov/23
+* [Bugfix] - UI: Paste of variables was losing the reference to the parent container.
+* [Change] - BO: New BO.Variable.ToString. Now it returns '{variablename} - {maintext}'.
+* [Enchancement] - UI: The variable list is always sorted by variablename.
+* [Change] - BO: Added 'System Iformation' properties category that contains Guid and IDs from self and parent for every container and phase.
+
+V2.5.0.4 2010/Nov/22
+* [BugFix] - UI: Error on BuildBOFromTree when variable is placed as a phase when connecting parent.
+
+V2.5.0.3 2010/Nov/19
+* [Change] - Preview: Added a page break at the end of each section.
+* [BugFix] - UI: Right click over 'variables' was throwing a null pointer exception.
+* [BugFix] - BO: Vairable.Guid changed from Shadows to Overrides and GenericObject.Guid became overridable.
+
+V2.5.0.2 2010/Nov/16
+* [BugFix] - UI: Redo wasn't adding description nor disposable false to the actions when adding to undo stack.
+* [BugFix] - UI: Collapse all didn't collapsed all the child nodes.
+* [BugFix] - UI: The icons when deserialize wasn't avialible.
+* [BugFix] - UI: Added numbers to the node serialization as a work arround for numeration weird behavior.
+* [Change] - UI: Confirmation when exit if there was changes during this session.
+* [BugFix] - UI: Copy with children wasn't working.
+* [BugFix] - BO: Validation when create new question.
+* [BugFix] - UI: Decrease indent was duplicating the nodes.
+* [Change] - BO: Guid visible as read only property.
+* [BugFix] - DA: The data table names wasn't converting from nothing to DBNull.
+* [BugFix] - BO: The parent property wasn't properly assign.
+
+V2.5.0.0 2010/Nov/15
+* [Enhancement] - DataManager: The generated file used to connect to the DataBase from SAS can connect to a SQL Server without the user instance mode.
+* [BugFix] - DataManager: The DragAndDrop from the Tree to the txtCondition is fixed
+* [BugFix] - DataManager: Bug in the GUI of the Connection Dialog
+* [Change] - DataManager: DataManager creates the views of the Questionnaire in the Analysis Schema.
+* [Change] - DataManager: All the primary keys of the tables are NONCLUSTERED.
+* [Change] - BO, DA: Added in study the fields for data table, log, legal values and analysis schema.
+* [Change] - BO, DA: Each container has table name and log table name property, the old table name was renamed to PDATableName.
+* [Feature] - BO: Implemented custom serialization interface in QuestionnarieSet, Questionnaire, Section, Phase, Checkpoint, Question, Info and Action.
+* [Feature] - UI: Replace the tree control with DevComponents.AdvTree.
+* [Feature] - UI: Added increase & decrease indent, move, copy, cut and paste for a group of nodes.
+* [Enhancement] - UI: Replaced icons in the structure tree.
+* [Enhancement] - DataManater - Edition Mode: The user can add a comment for each change or add a comment to multiple changes.
+* [Change] - DataManager: Show the file name in the message error when the user is importing form multiple QMDs.
+* [Feature] - Preview: Can show the complete route of each Phase (Info, Question or Checkpoint).
+* [Change] - DataManager - EditMode: The user can review the changes before commiting them.
+* [Change] - DataManager - EditMode: Use icons.
+* [Change] - DataManager - EditMode: Can't modify a cell that hasn't primary key.
+* [Feature] - UI: Implementation for undo/redo.
+
+V2.4.3.6 2010/Sept/23
+* [Enhancement] - DataManager: DataManager creates the tables of the LegalValues in the process of the creation of the DataBase (in the LegalValue Schema).
+* [Enhancement] - DataManager - Edition Mode: Manage Null Values (In Strings an empty string is Null).
+* [Enhancement] - DataManager - Edition Mode: Use ComboBox in the Questions that use the templates "DropDown" and "RadioButton"
+* [Enhancement] - DataManager: The Columns with type 'bit' use ComboBox insted of CheckBox (to manage the Null value).
+* [BugFix] - VersionControl: Update version in deploy mode wasn't working with Latinamerican regional configuration.
+
+V2.4.3.5 2010/Sept/21
+* [Enhancement] - DataManager - Edition Mode: The user Can't edit SubjectID and SubjectQuestionnaireInstanceID
+* [Enhancement] - DataManager: The Columns with type 'bit' use CheckBoxes insted of 'True' and 'False'.
+* [BugFix] - VersionControl: Parameter type of lastGenerationDateTime wasn't dateTime.
+
+V2.4.3.4 2010/Sept/14
+* [BugFix] - DataManager: El StreamWriter que escribe el SQL Stript de la creacion de la base de datos nunca fue inicializado.
+* [Enhancement] - DataManager: New Tree :)
+* [BugFix] - DA: Now checks the version of the qm file before load the structure.
+* [Enhancement]: Every form.StartPosition = CenterParent
+* [BugFix] - DataManager: Bug in the objects that keeps tracking of the columns to show in the DataGridView (those objects are used in the Edition Mode)
+
+V2.4.3.3 2010/Sept/09
+* [BugFix] - DataManager: The Script of the Creation of the DataBase was deleted each time DataManager was opened.
+* [BugFix] - DataManager: Row Count was 0 always.
+* [Enhancement] : Code Refactoring of classes of DataManager, DataDictionary.vb and PreviewClass.vb
+* [Feature] - Preview : Preview can show the MetaData of the QuesionnaireSet, Questionnaire and Section.  
+* [BugFix] - DA: Not loading section.OnNewRecordProcedureID.
+* [Feature] - DataManager: First Version of the EditMode of DataManager
+
+V2.4.3.2 2010/Aug/12
+* [BugFix] - DataManager: the float fields of GPSReading were type 'numeric(18,2)' insted of 'float'
+* [BugFix] - DataManager: Minor bug with the WaitingForm.vb
+* [BugFix] - DataManager: close the file of the script of the database.
+* [Change] - DataManager: the Insert Query of the metadata of the Study is writed in the file of the DataBase-Script.
+* [BugFix] - LogRecorder: To check for other instances with the same variableName, instead of assigning nothing it assigns variableName & variableName.
+
+V2.4.3.1 2010/Aug/04
+* [Change] - DataManager: Minor Refactory in TreeNodeDataManager.vb and StructureControl2.vb
+* [Feature] - DataManager: You can select or unselect all the Variables or Metadata of the Tree.
+* [Feature] - DataManager: The user can set a diferent DataBase as the Main DataBase.
+
+V2.4.3.0 2010/Jul/30
+* [Feature]: Added ScreenTemplate.VariableNameRequired for validations in BO. 
+* [BugFix]: Fixed a bug in the interface of DataManager
+* [BugFix]: Bug Fixed in the Generation of the DataBase with Data Manager (GPSReading)
+* [BugFix]: In DataManager the alias of the variables of CheckBoxes used LV.ShortName insted of "Question.VariableName & LV.ShortName"
+* [Change]: The ScreenTemlpate "GPSReading" adds 7 variables to the database generated by Data Manager
+* [Change]: The name of the variables generated by the CheckBox are Question.VariableName & LegalValue.ShortName
+* [Change]: In Empty Study.sdf was added the GPSReading screen template and removed the ViCoSubjectID screen template.
+* [Change]: Empty Study.sdf first version is now 0.0.0.0 instead of 1.0.0.0.
+* [BugFix] - Preview: The condition show when to branch, if it's False or True.
+
+V2.4.2.6 2010/Feb/23
+* [BugFix] Section wasn't loading OnNewRecordProcedureID.
+
+V2.4.2.5 2010/Feb/22
+* [BugFix] Lost of the translation when dragging question to variable.
+* [BugFix] Null pointer exception when refreshing a "variables" node.
+* [Feature] Added DataTableName and guid as browsable read only properties to the objects.
+* [Feautre] Show DataTableName in the Data Dictionaries
+
+V2.4.2.4 2010/Feb/18
+* [BugFix] DataDictionary: Variable Name of the CheckBoxes was fixed
+* [BugFix] DataDictionary: Show Checkboxes without Variable Name 
+
+V2.4.2.3 2010/Feb/18
+* [BugFix] Preview: CheckBox doesnt show variable name
+* [BugFix] Preview: Bug in the html of InfoTemplate fixed
+
+V2.4.2.2 2010/Feb/17
+* [BugFix] Fixed the indent and font of the Info Template in the Preview
+* [BugFix] The button "Prueba" has been removed.
+* [BugFix] Data Dictionary displays correctly the Legal Values and the CheckBoxes (NOT IN DEV)
+
+V2.4.2.1 2009/Nov/12
+* [BugFix] Checkpoint insert query had parameter sectionId as bit instead of int.
+
+V2.4.2.0 2009/Nov/09
+* [Change] Preview: Show Conditions
+* [Change] Preview: values of Legal Values in Drop Downs
+* [Change] Preview: use ShortName of LegalValues insted of Values if checkboxes
+* [Change] Preview: the first item in the DropDown have to be the Name of the Legal Values
+* [Bugfix] DataManager: Error creating the assigned variables in the DataBase
+* [Bugfix] Delete variable with context menu.
+* [Enhancement] Support SQL CE 3.5
+
+
+V2.4.1.2 2009/Oct/27
+* [Bugfix] Drop a phase from section to an empty node.
+* [Bugfix] Version numbering 1 by 1.
+* [Change] UICommon project removed. 
+
+V2.4.1.1 2009/Sep/17
+* [Bugfix] Multilanguage editor for variable maintext.
+
+V2.4.1.0 2009/Sep/17
+* [Feature] Main text and dictionary lenght = 500.
+* [BugFix] Context menu can add question and info screens when selecting an info.
+* [BugFix] The name screen template now allows to choose legal value tables.
+* [Change] The new default value of questionnaireSet.NewSubjectSectionID is nothing.
+* [Change] The new default value of questionnaireSet.NewSubjectProcedureID is nothing.
+
+V2.4.0.1 2009/Aug/25
+* [BugFix] The condition editor is disabled until a future release.
+* [BugFix] The storer was inserting questions as variables.
+* [Enhancement] Update the language drop down after each language editor call.
+* [Enhancement] Class decoration for BO.Variable.
+
+V2.4.0.0 2009/Aug/20
+* [Enhancement] Create object form appears in the middle of the parent form.
+* [Enhancement] The node is added in the study tree with the new name.
+* [BugFix] Drag and drop fix when dragging elements inside checkpoints.
+* [BugFix] Error in create variable.
+* [BugFix] Error when deleting with the button and context menu.
+* [Feature] Se crearon Data Dictionary por Variable y por Pregunta.
+
+
+v2.2.0.1
+* [BugFix] Error in logRecorder on create variable.
+* [Enhancement] The form for multi language has default alternative language.
+* [BugFix] The log table wasn't adding the 'create column' entry.
+* [Feature] Language editor on the edit menu.
+
+v2.2.0.0 2009/Jun/11
+* [BugFix] The HTML (Preview) support strange characters (like á).
+* [Change] The HTML (Preview) use non-breaking spaces for indent.
+* [Feature] Multi language support for the study (can't add languages from the designer).
+* [Change] Trim for all the string fields.
+* [Change] Replace version number pop-up with a row editor.
+
+v2.1.0.1 2009/Apr/07
+* [BugFix] Support for variable scope questionnaire.
+* [BugFix] Validation during creation of a question.
+
+v2.1.0.0 2009/Apr/07
+* [Feature] Support for variable scope questionnaire.
+* [Feature] Popup for the creation of objects in the structure.

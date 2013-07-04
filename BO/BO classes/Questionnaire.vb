@@ -57,7 +57,7 @@ Public Class Questionnaire
             If Me.Parent IsNot Nothing Then
                 Return Me.Parent.DataBaseID
             Else
-                Return "N/A"
+                Return -1
             End If
         End Get
     End Property

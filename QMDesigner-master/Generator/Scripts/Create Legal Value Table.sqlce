@@ -1,0 +1,6 @@
+CREATE TABLE {tableName}(
+	[Value]		int		NOT NULL,
+	[Order]		int		NOT NULL,
+	[Text]		nvarchar(200)	NOT NULL,
+	[ShortName]	nvarchar(50)	NULL,
+	[Group]		nvarchar(50)	NULL)

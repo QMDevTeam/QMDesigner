@@ -1,0 +1,40 @@
+CREATE TABLE {tableName}(
+
+	CONSTRAINT PK_{tableName} PRIMARY KEY (SubjectID),
+
+	SubjectID				uniqueidentifier NOT NULL,
+	SubjectSiteID			int NOT NULL,
+	SubjectCompletedStudy	bit NOT NULL,
+	ForDeletion				bit NOT NULL,
+
+	PDAInsertUser		nvarchar(50) NOT NULL,
+	PDAInsertDate		datetime NOT NULL,
+	PDAInsertVersion	nvarchar(50) NOT NULL,
+	PDAInsertSN			nvarchar(50) NOT NULL,
+	PDAInsertPDAName	nvarchar(50) NOT NULL,
+
+	PDALastModifUser	nvarchar(50),
+	PDALastModifDate	datetime,
+	PDALastModifVersion	nvarchar(50),
+	PDALastModifSN		nvarchar(50),
+	PDALastModifPDAName	nvarchar(50),
+
+	PDALastUploadUser		nvarchar(50),
+	PDALastUploadDate		datetime,
+	PDALastUploadVersion	nvarchar(50),
+	PDALastUploadSN			nvarchar(50),
+	PDALastUploadPDAName	nvarchar(50),
+
+	SubjectLastScreenID	int,
+	SubjectStack		nvarchar(500),
+
+	SASubjectID	nvarchar(50)	--Study Assigned SubjectID
+
+
+	/* Add Subject Record Data Columns here */
+
+	/* Add flags, derived, calculated or asigned Columns here */
+);
+
+
+CREATE INDEX IX_SASubjectID ON {tableName}(SASubjectID);

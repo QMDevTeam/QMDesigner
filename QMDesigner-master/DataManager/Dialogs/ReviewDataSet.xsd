@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="ReviewDataSet" targetNamespace="http://tempuri.org/ReviewDataSet.xsd" xmlns:mstns="http://tempuri.org/ReviewDataSet.xsd" xmlns="http://tempuri.org/ReviewDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="ReviewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="ReviewDataSet" msprop:Generator_DataSetName="ReviewDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Review" msprop:Generator_UserTableName="Review" msprop:Generator_RowDeletedName="ReviewRowDeleted" msprop:Generator_RowChangedName="ReviewRowChanged" msprop:Generator_RowClassName="ReviewRow" msprop:Generator_RowChangingName="ReviewRowChanging" msprop:Generator_RowEvArgName="ReviewRowChangeEvent" msprop:Generator_RowEvHandlerName="ReviewRowChangeEventHandler" msprop:Generator_TableClassName="ReviewDataTable" msprop:Generator_TableVarName="tableReview" msprop:Generator_RowDeletingName="ReviewRowDeleting" msprop:Generator_TablePropName="Review">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Accept" msprop:Generator_UserColumnName="Accept" msprop:Generator_ColumnPropNameInRow="Accept" msprop:Generator_ColumnVarNameInTable="columnAccept" msprop:Generator_ColumnPropNameInTable="AcceptColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="SubjectID" msdata:DataType="System.Guid, mscorlib, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_UserColumnName="SubjectID" msprop:Generator_ColumnPropNameInRow="SubjectID" msprop:Generator_ColumnVarNameInTable="columnSubjectID" msprop:Generator_ColumnPropNameInTable="SubjectIDColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="SubjectQuestionnaireInstanceID" msprop:Generator_UserColumnName="SubjectQuestionnaireInstanceID" msprop:Generator_ColumnPropNameInRow="SubjectQuestionnaireInstanceID" msprop:Generator_ColumnVarNameInTable="columnSubjectQuestionnaireInstanceID" msprop:Generator_ColumnPropNameInTable="SubjectQuestionnaireInstanceIDColumn" type="xs:unsignedByte" minOccurs="0" />
+              <xs:element name="DataTableName" msprop:Generator_UserColumnName="DataTableName" msprop:Generator_ColumnPropNameInRow="DataTableName" msprop:Generator_ColumnVarNameInTable="columnDataTableName" msprop:Generator_ColumnPropNameInTable="DataTableNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="ColumnName" msprop:Generator_UserColumnName="ColumnName" msprop:Generator_ColumnPropNameInRow="ColumnName" msprop:Generator_ColumnVarNameInTable="columnColumnName" msprop:Generator_ColumnPropNameInTable="ColumnNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="OldValue" msprop:Generator_UserColumnName="OldValue" msprop:Generator_ColumnPropNameInRow="OldValue" msprop:Generator_ColumnVarNameInTable="columnOldValue" msprop:Generator_ColumnPropNameInTable="OldValueColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="NewValue" msprop:Generator_UserColumnName="NewValue" msprop:Generator_ColumnPropNameInRow="NewValue" msprop:Generator_ColumnVarNameInTable="columnNewValue" msprop:Generator_ColumnPropNameInTable="NewValueColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="Comment" msprop:Generator_UserColumnName="Comment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInTable="CommentColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="UseSubjectQuestionnaireInstanceID" msprop:Generator_UserColumnName="UseSubjectQuestionnaireInstanceID" msprop:Generator_ColumnPropNameInRow="UseSubjectQuestionnaireInstanceID" msprop:Generator_ColumnVarNameInTable="columnUseSubjectQuestionnaireInstanceID" msprop:Generator_ColumnPropNameInTable="UseSubjectQuestionnaireInstanceIDColumn" type="xs:boolean" minOccurs="0" />
+              <xs:element name="LogTableName" msprop:Generator_UserColumnName="LogTableName" msprop:Generator_ColumnVarNameInTable="columnLogTableName" msprop:Generator_ColumnPropNameInRow="LogTableName" msprop:Generator_ColumnPropNameInTable="LogTableNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="PDATableName" msprop:Generator_UserColumnName="PDATableName" msprop:Generator_ColumnVarNameInTable="columnPDATableName" msprop:Generator_ColumnPropNameInRow="PDATableName" msprop:Generator_ColumnPropNameInTable="PDATableNameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="RowIndex" msprop:Generator_UserColumnName="RowIndex" msprop:Generator_ColumnPropNameInRow="RowIndex" msprop:Generator_ColumnVarNameInTable="columnRowIndex" msprop:Generator_ColumnPropNameInTable="RowIndexColumn" type="xs:int" minOccurs="0" />
+              <xs:element name="ColumnAlias" msprop:Generator_UserColumnName="ColumnAlias" msprop:Generator_ColumnPropNameInRow="ColumnAlias" msprop:Generator_ColumnVarNameInTable="columnColumnAlias" msprop:Generator_ColumnPropNameInTable="ColumnAliasColumn" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

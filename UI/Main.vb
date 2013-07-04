@@ -8,7 +8,16 @@ Public Class Main
 
         ' Set references.
         StructureControl1.uxPreviewControl = uxPreviewControl
-        StructureControl1.uxPropertyGrid = uxPropertyGrid
+        'StructureControl1.uxPropertyGrid = uxPropertyGrid
+        StructureControl1.uxCtlQuestionnaireSet = UxQuestionnaireSet
+        StructureControl1.uxCtlQuestionnaire = UxQuestionnaire
+        StructureControl1.uxCtlSection = UxSection
+        StructureControl1.uxCtlVariable = UxVariable
+        StructureControl1.uxCtlStudy = uxStudy
+        StructureControl1.uxCtlQuestion = uxQuestions
+        StructureControl1.uxCtlCheckPoint = uxCheckpoint
+        StructureControl1.uxCtlInformation = uxlInformation
+
 
         ' Load Empty Study.
         _study = DA.Loader.GetStudy(IO.Path.GetDirectoryName(Application.ExecutablePath) & "\Empty Study.sdf")
@@ -218,11 +227,11 @@ Public Class Main
         ' Controls visibility.
         StructureControl1.Visible = StudyOutlineToolStripMenuItem.Checked
         uxPreviewControl.Visible = PreviewPanelToolStripMenuItem.Checked
-        uxPropertyGrid.Visible = PropertyGridToolStripMenuItem.Checked
+        UxQuestionnaireSet.Visible = PropertyGridToolStripMenuItem.Checked
 
         ' Set splitters visibility.
-        StructurePreviewSplitter.Visible = StructureControl1.Visible And (uxPreviewControl.Visible Or uxPropertyGrid.Visible)
-        PreviewPropertyGridSplitter.Visible = uxPreviewControl.Visible And uxPropertyGrid.Visible
+        StructurePreviewSplitter.Visible = StructureControl1.Visible And (uxPreviewControl.Visible Or UxQuestionnaireSet.Visible)
+        PreviewPropertyGridSplitter.Visible = uxPreviewControl.Visible And uxQuestionnaireSet.Visible
 
     End Sub
 
@@ -296,7 +305,7 @@ Public Class Main
     End Sub
 
 
-    Private Sub uxPropertyGrid_PropertyValueChanged(ByVal s As System.Object, ByVal e As System.Windows.Forms.PropertyValueChangedEventArgs) Handles uxPropertyGrid.PropertyValueChanged
+    Private Sub uxPropertyGrid_PropertyValueChanged(ByVal s As System.Object, ByVal e As System.Windows.Forms.PropertyValueChangedEventArgs)
 
         If "MainText|Name|MultipleInstances|Required".Contains(e.ChangedItem.PropertyDescriptor.Name) Then
 
@@ -305,7 +314,7 @@ Public Class Main
         End If
 
         Me.StructureControl1.HighlightNodes(Me.StructureControl1.SelectedAdvNode)
-        Me.StructureControl1.UndoStack.Peek.Description = String.Format("Change of '{0}' property '{1}'", uxPropertyGrid.SelectedObject.ToString, e.ChangedItem.PropertyDescriptor.Name)
+        'Me.StructureControl1.UndoStack.Peek.Description = String.Format("Change of '{0}' property '{1}'", uxPropertyGrid.SelectedObject.ToString, e.ChangedItem.PropertyDescriptor.Name)
         Me.StructureControl1.UndoStack.Peek.Disposable = False
         _objectChanged = True
         BO.ContextClass.HasChanges = True
@@ -313,7 +322,7 @@ Public Class Main
     End Sub
 
 
-    Private Sub uxPropertyGrid_SelectedObjectsChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles uxPropertyGrid.SelectedObjectsChanged
+    Private Sub uxPropertyGrid_SelectedObjectsChanged(ByVal sender As System.Object, ByVal e As System.EventArgs)
 
         If Me.StructureControl1.UndoStack.Count > 0 AndAlso Me.StructureControl1.UndoStack.Peek.Disposable Then
             Me.StructureControl1.UndoStack.Pop()
@@ -388,5 +397,9 @@ Public Class Main
     End Sub
 
 
+
+    Private Sub uxVariable_Leave(sender As System.Object, e As System.EventArgs) Handles uxVariable.Leave
+
+    End Sub
 
 End Class

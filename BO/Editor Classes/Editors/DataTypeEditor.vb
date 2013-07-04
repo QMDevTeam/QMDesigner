@@ -23,6 +23,27 @@ Public Class DataTypeEditor
         Return New StandardValuesCollection(dataTypes)
     End Function
 
+    Public Overloads Function GetStandardValues() As System.ComponentModel.TypeConverter.StandardValuesCollection
+
+        Dim index As Integer
+        Dim dataTypes As New List(Of String)
+        For Each template As BO.ScreenTemplate In BO.Study.ScreenTemplates
+            If template.DataType <> "" Then
+                index = 0
+                While index < dataTypes.Count AndAlso dataTypes(index) < template.DataType
+                    index += 1
+                End While
+                If index = dataTypes.Count Then
+                    dataTypes.Add(template.DataType)
+                ElseIf dataTypes(index) > template.DataType Then
+                    dataTypes.Insert(index, template.DataType)
+                End If
+            End If
+        Next
+
+        Return New StandardValuesCollection(dataTypes)
+    End Function
+
     ' Loads the sugested values for the property.
     Public Overrides Function GetStandardValuesSupported(ByVal context As System.ComponentModel.ITypeDescriptorContext) As Boolean
 

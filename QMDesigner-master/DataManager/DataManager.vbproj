@@ -1,0 +1,311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A9D752DD-BA5D-4F80-9D43-D5FCFB4A327B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <StartupObject>
+    </StartupObject>
+    <RootNamespace>DataManager</RootNamespace>
+    <AssemblyName>DataManager</AssemblyName>
+    <MyType>Windows</MyType>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <OptionStrict>On</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>DataManager.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>DataManager.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=9.0.0.0, Culture=neutral, PublicKeyToken=7eb7c3a35b91de04, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenNETCF.Desktop.Communication, Version=2.9.2244.24857, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\OpenNETCF.Desktop.Communication.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\..\..\..\Program Files\Microsoft SQL Server Compact Edition\v3.5\Desktop\System.Data.SqlServerCe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\DataBases\DatabaseGenerator.vb" />
+    <Compile Include="Classes\DataDictionaryBuilder.vb" />
+    <Compile Include="Classes\Edit Classes\CellInfo.vb" />
+    <Compile Include="Classes\Edit Classes\ColumnInfo.vb" />
+    <Compile Include="Classes\Edit Classes\KeyInfo.vb" />
+    <Compile Include="Classes\Edit Classes\RowInfo.vb" />
+    <Compile Include="Classes\Edit Classes\TableInfo.vb" />
+    <Compile Include="Classes\DataBases\MainDatabase.vb" />
+    <Compile Include="Classes\DataBases\ExternalDatabase.vb" />
+    <Compile Include="Classes\RegistryManager.vb" />
+    <Compile Include="Classes\Statistic.vb" />
+    <Compile Include="Classes\TreeNodeDataManager.vb" />
+    <Compile Include="Dialogs\ConnectionDataBaseForm.Designer.vb">
+      <DependentUpon>ConnectionDataBaseForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ConnectionDataBaseForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManagerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DataManagerForm.Designer.vb">
+      <DependentUpon>DataManagerForm.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\EditMessageFrm.Designer.vb">
+      <DependentUpon>EditMessageFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\EditMessageFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\LogViewer.Designer.vb">
+      <DependentUpon>LogViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\LogViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ReviewChangesDialog.Designer.vb">
+      <DependentUpon>ReviewChangesDialog.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ReviewChangesDialog.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\ReviewDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReviewDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\ReviewDataSet.vb">
+      <DependentUpon>ReviewDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SQLCommandForm.Designer.vb">
+      <DependentUpon>SQLCommandForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SQLCommandForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\SummaryDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SummaryDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\WaitingForm.Designer.vb">
+      <DependentUpon>WaitingForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\WaitingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Dialogs\SummaryViewer.Designer.vb">
+      <DependentUpon>SummaryViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\SummaryViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserControls\StructureControl2.Designer.vb">
+      <DependentUpon>StructureControl2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\StructureControl2.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Dialogs\ConnectionDataBaseForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ConnectionDataBaseForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DataManagerForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DataManagerForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\EditMessageFrm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>EditMessageFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\LogViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>LogViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\ReviewChangesDialog.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>ReviewChangesDialog.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SQLCommandForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SQLCommandForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\WaitingForm.resx">
+      <DependentUpon>WaitingForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\SummaryViewer.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SummaryViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\StructureControl2.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>StructureControl2.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BO\BO.vbproj">
+      <Project>{6DACF2E1-A883-4AC9-ADCC-EA003625710C}</Project>
+      <Name>BO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DA\DA.vbproj">
+      <Project>{0D192DBA-7D58-46C3-8070-804D03A85C9F}</Project>
+      <Name>DA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Dialogs\ReviewDataSet.xsc">
+      <DependentUpon>ReviewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Dialogs\ReviewDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReviewDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dialogs\ReviewDataSet.xss">
+      <DependentUpon>ReviewDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Dialogs\SummaryDataSet.xsc">
+      <DependentUpon>SummaryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Dialogs\SummaryDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SummaryDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Dialogs\SummaryDataSet.xss">
+      <DependentUpon>SummaryDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\iconCheckbox[1].gif" />
+    <None Include="Scripts\Create Data Table Audit Trail.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Create Data Table.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Create Legal Value Table.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Create Schema.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Create Subject Table Audit Trail.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Create Subject Table.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Create Study Table.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Scripts\Insert Legal Value Item.sql">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
