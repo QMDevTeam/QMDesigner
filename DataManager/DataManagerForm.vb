@@ -525,13 +525,25 @@ Public Class DataManagerForm
     ''' <remarks></remarks>
     Private Sub ImportMultipleQMDFiles()
 
-        If uxOpenQMDToImport.ShowDialog() = Windows.Forms.DialogResult.OK Then
+
+        Dim FileseToChoose As ChooseFiles = New ChooseFiles()
+        ''FileseToChoose.Show()
+
+
+
+
+        ''If uxOpenQMDToImport.ShowDialog() = Windows.Forms.DialogResult.OK Then
+
+        If FileseToChoose.ShowDialog() = Windows.Forms.DialogResult.OK Then
+
+
 
             Dim globalStatistic As New List(Of FileStatistic)()
             Dim temporalConnection As ExternalDatabase
             Dim fileNames As New List(Of String)
 
-            fileNames.AddRange(uxOpenQMDToImport.FileNames)
+            ''fileNames.AddRange(uxOpenQMDToImport.FileNames)
+            fileNames = FileseToChoose.GetQMDFiles()
             fileNames.Sort(AddressOf Sort)
 
             For Each fileName As String In fileNames
@@ -564,7 +576,8 @@ Public Class DataManagerForm
             ' Show the Summary Dialog
             Dim SummaryDialog As New SummaryViewer(globalStatistic)
             SummaryDialog.ShowDialog()
-
+        Else
+            MessageBox.Show("No files selected.")
         End If
     End Sub
 

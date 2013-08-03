@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -21,6 +21,13 @@
     <SccProvider>
     </SccProvider>
     <OptionStrict>On</OptionStrict>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -29,8 +36,7 @@
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
     <DocumentationFile>DataManager.xml</DocumentationFile>
-    <NoWarn>
-    </NoWarn>
+    <NoWarn>42353,42354,42355</NoWarn>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -40,8 +46,7 @@
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DocumentationFile>DataManager.xml</DocumentationFile>
-    <NoWarn>
-    </NoWarn>
+    <NoWarn>42353,42354,42355</NoWarn>
     <WarningsAsErrors>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036</WarningsAsErrors>
   </PropertyGroup>
   <ItemGroup>
@@ -51,13 +56,22 @@
     </Reference>
     <Reference Include="OpenNETCF.Desktop.Communication, Version=2.9.2244.24857, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>.\OpenNETCF.Desktop.Communication.dll</HintPath>
+      <HintPath>..\Common\OpenNETCF.Desktop.Communication.dll</HintPath>
+    </Reference>
+    <Reference Include="Raccoom.TreeViewFolderBrowser, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common\Raccoom.TreeViewFolderBrowser.DLL</HintPath>
+    </Reference>
+    <Reference Include="Raccoom.TreeViewFolderBrowser.DataProviders, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Common\Raccoom.TreeViewFolderBrowser.DataProviders.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.SqlServerCe, Version=3.5.1.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\..\..\..\..\..\Program Files\Microsoft SQL Server Compact Edition\v3.5\Desktop\System.Data.SqlServerCe.dll</HintPath>
+      <HintPath>C:\Program Files\Microsoft SQL Server Compact Edition\v3.5\Desktop\System.Data.SqlServerCe.dll</HintPath>
     </Reference>
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
@@ -87,7 +101,9 @@
     <Compile Include="Classes\DataBases\ExternalDatabase.vb" />
     <Compile Include="Classes\RegistryManager.vb" />
     <Compile Include="Classes\Statistic.vb" />
-    <Compile Include="Classes\TreeNodeDataManager.vb" />
+    <Compile Include="Classes\TreeNodeDataManager.vb">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Dialogs\ConnectionDataBaseForm.Designer.vb">
       <DependentUpon>ConnectionDataBaseForm.vb</DependentUpon>
     </Compile>
@@ -142,6 +158,12 @@
       <DependentUpon>WaitingForm.vb</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\WaitingForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChooseFiles.Designer.vb">
+      <DependentUpon>ChooseFiles.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ChooseFiles.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -199,6 +221,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\WaitingForm.resx">
       <DependentUpon>WaitingForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ChooseFiles.resx">
+      <DependentUpon>ChooseFiles.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
