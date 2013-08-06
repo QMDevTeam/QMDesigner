@@ -35,6 +35,7 @@ Partial Class ChooseFiles
         Me.txtMemo.Size = New System.Drawing.Size(336, 434)
         Me.txtMemo.TabIndex = 7
         Me.txtMemo.Text = ""
+		Me.txtMemo.Visible = False
         '
         'Button2
         '

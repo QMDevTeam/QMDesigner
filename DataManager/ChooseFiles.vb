@@ -67,23 +67,23 @@ Public Class ChooseFiles
     Public Function GetQMDFiles() As List(Of String)
         Return QMDFiles
     End Function
-    Private Sub WriteTextBoxQMDfiles(ByVal treeNode As TreeNode, ByVal nodeChecked As Boolean)
-        For Each node As TreeNode In treeNode.Nodes
+    'Private Sub WriteTextBoxQMDfiles(ByVal treeNode As TreeNode, ByVal nodeChecked As Boolean)
+    '    For Each node As TreeNode In treeNode.Nodes
 
-            If node.Checked = nodeChecked Then
-                If String.Compare(Convert.ToString(node.Tag), "file") = 0 Then
-                    Dim nodePt As TreeNodePath = TryCast(node.Parent, TreeNodePath)
-                    txtMemo.Text = txtMemo.Text + vbCr & vbLf + nodePt.Path + "\" + node.Name
-                End If
-            End If
+    '        If node.Checked = nodeChecked Then
+    '            If String.Compare(Convert.ToString(node.Tag), "file") = 0 Then
+    '                Dim nodePt As TreeNodePath = TryCast(node.Parent, TreeNodePath)
+    '                txtMemo.Text = txtMemo.Text + vbCr & vbLf + nodePt.Path + "\" + node.Name
+    '            End If
+    '        End If
 
-            If node.Nodes.Count > 0 Then
-                ' If the current node has child nodes, call the CheckAllChildsNodes method recursively.
+    '        If node.Nodes.Count > 0 Then
+    '            ' If the current node has child nodes, call the CheckAllChildsNodes method recursively.
 
-                Me.WriteTextBoxQMDfiles(node, nodeChecked)
-            End If
-        Next
-    End Sub
+    '            Me.WriteTextBoxQMDfiles(node, nodeChecked)
+    '        End If
+    '    Next
+    'End Sub
 
     Private Sub WriteCheckedNodes(ByVal treeNode As TreeNode, ByVal nodeChecked As Boolean)
         For Each node As TreeNode In treeNode.Nodes
@@ -91,7 +91,7 @@ Public Class ChooseFiles
             If node.Checked = nodeChecked Then
                 If String.Compare(Convert.ToString(node.Tag), "file") = 0 Then
                     Dim nodePt As TreeNodePath = TryCast(node.Parent, TreeNodePath)
-                    txtMemo.Text = txtMemo.Text + vbCr & vbLf + nodePt.Path + "\" + node.Name
+                    'txtMemo.Text = txtMemo.Text + vbCr & vbLf + nodePt.Path + "\" + node.Name
                     QMDFiles.Add(nodePt.Path + "\" + node.Name)
                 End If
             End If
@@ -204,7 +204,7 @@ Public Class ChooseFiles
             End If
 
             If (String.Compare(Convert.ToString(e.Node.Tag), "file") <> 0) Then
-                WriteTextBoxQMDfiles(e.Node, True)
+                 ''WriteTextBoxQMDfiles(e.Node, True)
 
             End If
 
@@ -252,7 +252,7 @@ Public Class ChooseFiles
     '}
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        txtMemo.Clear()
+        'txtMemo.Clear()
         QMDFiles.Clear()
         For Each root As TreeNode In treeViewFolderBrowser1.Nodes
             WriteCheckedNodes(root, True)
