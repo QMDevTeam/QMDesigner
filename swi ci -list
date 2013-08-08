@@ -1,0 +1,27 @@
+[33mcommit 2cc74635513468e3e4acb957b1a936ca41bdce25[m
+Author: ManuelCordon <ManuelCordon@gmail.com>
+Date:   Sat Aug 3 13:12:24 2013 -0600
+
+    Added bulk import for QMD files, updated solution to vs2012 express and changed the version to 2.8.3.0
+
+[33mcommit 96c6f3e4becab49f6c2bdc335078ba235bbfd61b[m
+Author: Fredy Munoz <fredym@gmail.com>
+Date:   Tue Jul 30 12:55:11 2013 -0600
+
+    Modify .gitignore to include Empty_Study.sdf and include it
+
+[33mcommit c9fdc768b559b6e486b2dfecf16842d489627a50[m
+Author: Manuel Cordon <manuelcordon@gmail.com>
+Date:   Sat Jun 15 10:50:48 2013 -0600
+
+    Code base.
+    
+    Initial code upload for QMDesigner version 2.8.2.0.
+    All references where updated or removed to allow the code to compile in
+    a new development environment.
+
+[33mcommit 9debd236df313e9d357d78ba4a73d9d1ddb51a50[m
+Author: manuelCordon <manuelcordon@gmail.com>
+Date:   Sat Jun 15 09:14:21 2013 -0700
+
+    Initial commit
