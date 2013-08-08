@@ -48,6 +48,7 @@ Partial Class DataManagerForm
         Me.uxMainDataBaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.uxPDADataBaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.uxQMDFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.PruebaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.uxOpenFileDialog = New System.Windows.Forms.OpenFileDialog
         Me.Splitter1 = New System.Windows.Forms.Splitter
         Me.txtShowQuery = New System.Windows.Forms.TextBox
@@ -81,9 +82,9 @@ Partial Class DataManagerForm
         Me.butAcceptChanges = New DevComponents.DotNetBar.ButtonItem
         Me.butDorpChanges = New DevComponents.DotNetBar.ButtonItem
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.PruebaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.uxStructureTree = New DataManager.StructureControl2
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
+        Me.ImportFromDBFilessToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
         Me.MenuStrip1.SuspendLayout()
         Me.uxGroupBoxOptions.SuspendLayout()
         Me.uxGroupBoxConnection.SuspendLayout()
@@ -147,7 +148,7 @@ Partial Class DataManagerForm
         '
         'ImportToolStripMenuItem
         '
-        Me.ImportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.uxImputPDAToolStripMenuItem, Me.uxImputFromQMDFilesToolStripMenuItem})
+        Me.ImportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.uxImputPDAToolStripMenuItem, Me.uxImputFromQMDFilesToolStripMenuItem, Me.ImportFromDBFilessToolStripMenuItem})
         Me.ImportToolStripMenuItem.Name = "ImportToolStripMenuItem"
         Me.ImportToolStripMenuItem.Size = New System.Drawing.Size(51, 20)
         Me.ImportToolStripMenuItem.Text = "Import"
@@ -233,6 +234,12 @@ Partial Class DataManagerForm
         Me.uxQMDFileToolStripMenuItem.Name = "uxQMDFileToolStripMenuItem"
         Me.uxQMDFileToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
         Me.uxQMDFileToolStripMenuItem.Text = "QMD File"
+        '
+        'PruebaToolStripMenuItem
+        '
+        Me.PruebaToolStripMenuItem.Name = "PruebaToolStripMenuItem"
+        Me.PruebaToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
+        Me.PruebaToolStripMenuItem.Text = "Prueba"
         '
         'uxOpenFileDialog
         '
@@ -581,12 +588,6 @@ Partial Class DataManagerForm
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         Me.ImageList1.Images.SetKeyName(0, "Cancel Small.png")
         '
-        'PruebaToolStripMenuItem
-        '
-        Me.PruebaToolStripMenuItem.Name = "PruebaToolStripMenuItem"
-        Me.PruebaToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
-        Me.PruebaToolStripMenuItem.Text = "Prueba"
-        '
         'uxStructureTree
         '
         Me.uxStructureTree.ColumnsInfo = Nothing
@@ -598,6 +599,12 @@ Partial Class DataManagerForm
         '
         'BindingSource1
         '
+        '
+        'ImportFromDBFilessToolStripMenuItem
+        '
+        Me.ImportFromDBFilessToolStripMenuItem.Name = "ImportFromDBFilessToolStripMenuItem"
+        Me.ImportFromDBFilessToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
+        Me.ImportFromDBFilessToolStripMenuItem.Text = "Import From DB files(s)"
         '
         'DataManagerForm
         '
@@ -692,12 +699,13 @@ Partial Class DataManagerForm
     Friend WithEvents uxPencilPictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents uxDataGridViewX As DevComponents.DotNetBar.Controls.DataGridViewX
     Friend WithEvents StyleManager1 As DevComponents.DotNetBar.StyleManager
-    Friend WithEvents Bar1 As DevComponents.DotNetBar.Bar
-    Friend WithEvents butEdit As DevComponents.DotNetBar.ButtonItem
-    Friend WithEvents butAcceptChanges As DevComponents.DotNetBar.ButtonItem
-    Friend WithEvents butDorpChanges As DevComponents.DotNetBar.ButtonItem
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
     Friend WithEvents PruebaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BindingSource1 As System.Windows.Forms.BindingSource
+    Friend WithEvents ImportFromDBFilessToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Private WithEvents Bar1 As DevComponents.DotNetBar.Bar
+    Private WithEvents butEdit As DevComponents.DotNetBar.ButtonItem
+    Private WithEvents butAcceptChanges As DevComponents.DotNetBar.ButtonItem
+    Private WithEvents butDorpChanges As DevComponents.DotNetBar.ButtonItem
 
 End Class
