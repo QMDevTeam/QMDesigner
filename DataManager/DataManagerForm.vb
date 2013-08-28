@@ -518,6 +518,14 @@ Public Class DataManagerForm
 
         End If
     End Sub
+    ''' <summary>
+    ''' Class used for sort QMD Class based in the filename NOT the path.
+    ''' </summary>
+    ''' <param name="list"></param>
+    ''' <remarks></remarks>
+    Private Shared Sub SortQMDClass(list As List(Of ChooseFiles.DirectoryClass))
+        list.Sort(Function(p1, p2) String.Compare(p1.filename, p2.filename, True))
+    End Sub
 
     ''' <summary>
     ''' Import Multiple QMD Files
@@ -540,23 +548,24 @@ Public Class DataManagerForm
 
             Dim globalStatistic As New List(Of FileStatistic)()
             Dim temporalConnection As ExternalDatabase
-            Dim fileNames As New List(Of String)
+            Dim fileNamesClass As New List(Of ChooseFiles.DirectoryClass)
+            fileNamesClass = FileseToChoose.GetQMDFilesClass()
 
-            ''fileNames.AddRange(uxOpenQMDToImport.FileNames)
-            fileNames = FileseToChoose.GetQMDFiles()
-            fileNames.Sort(AddressOf Sort)
+            SortQMDClass(fileNamesClass)
 
-            For Each fileName As String In fileNames
+
+
+            For Each fileName As ChooseFiles.DirectoryClass In fileNamesClass
 
                 temporalConnection = New ExternalDatabase
 
                 Try
                     'Connect to the DataBase
-                    temporalConnection.SetConnectionParams(fileName, "Qu3st10nn@1r3M0b1l3")
+                    temporalConnection.SetConnectionParams(fileName.path, "Qu3st10nn@1r3M0b1l3")
 
                 Catch ex As Exception
 
-                    Dim fileInfo As New System.IO.FileInfo(fileName)
+                    Dim fileInfo As New System.IO.FileInfo(fileName.path)
 
                     MessageBox.Show("File: " & fileInfo.Name & Environment.NewLine & ex.Message, "Error - DataManager", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     temporalConnection.CloseConnection()

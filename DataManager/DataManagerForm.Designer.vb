@@ -22,67 +22,67 @@ Partial Class DataManagerForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DataManagerForm))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip
-        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.uxConnect_DisconnectPDAMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.uxOpenQMDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator
-        Me.OpenMainDatabaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ImportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.uxImputPDAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.uxImputFromQMDFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ExportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.uxExportToSASToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator
-        Me.uxExportToMainDBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.QueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ExecuteQueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ClearQueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.uxMainDataBaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.uxPDADataBaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.uxQMDFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.uxOpenFileDialog = New System.Windows.Forms.OpenFileDialog
-        Me.Splitter1 = New System.Windows.Forms.Splitter
-        Me.txtShowQuery = New System.Windows.Forms.TextBox
-        Me.uxGroupBoxOptions = New System.Windows.Forms.GroupBox
-        Me.ckbTrimNames = New System.Windows.Forms.CheckBox
-        Me.uxGroupBoxConnection = New System.Windows.Forms.GroupBox
-        Me.rbQMDFile = New System.Windows.Forms.RadioButton
-        Me.rbPDADataBase = New System.Windows.Forms.RadioButton
-        Me.rbMainDataBase = New System.Windows.Forms.RadioButton
-        Me.uxGroupBoxCondition = New System.Windows.Forms.GroupBox
-        Me.txtWhereQuery = New System.Windows.Forms.TextBox
-        Me.uxSaveFileDialogSAS = New System.Windows.Forms.SaveFileDialog
-        Me.Panel1 = New System.Windows.Forms.Panel
-        Me.Splitter4 = New System.Windows.Forms.Splitter
-        Me.Panel2 = New System.Windows.Forms.Panel
-        Me.uxPencilPictureBox = New System.Windows.Forms.PictureBox
-        Me.uxPicturePDA = New System.Windows.Forms.PictureBox
-        Me.uxPictureComputer = New System.Windows.Forms.PictureBox
-        Me.uxPictureSDFFile = New System.Windows.Forms.PictureBox
-        Me.Splitter3 = New System.Windows.Forms.Splitter
-        Me.Splitter2 = New System.Windows.Forms.Splitter
-        Me.uxOpenQMDToImport = New System.Windows.Forms.OpenFileDialog
-        Me.Splitter5 = New System.Windows.Forms.Splitter
-        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip
-        Me.uxRowsToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
-        Me.uxReadOnlyToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel
-        Me.uxDataGridViewX = New DevComponents.DotNetBar.Controls.DataGridViewX
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
+        Me.FileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.uxConnect_DisconnectPDAMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.uxOpenQMDToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.OpenMainDatabaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CloseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.uxImputPDAToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.uxImputFromQMDFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExportToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.uxExportToSASToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.uxExportToMainDBToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ExecuteQueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ClearQueryToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ViewToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.uxMainDataBaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.uxPDADataBaseToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.uxQMDFileToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PruebaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.uxOpenFileDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.Splitter1 = New System.Windows.Forms.Splitter()
+        Me.txtShowQuery = New System.Windows.Forms.TextBox()
+        Me.uxGroupBoxOptions = New System.Windows.Forms.GroupBox()
+        Me.ckbTrimNames = New System.Windows.Forms.CheckBox()
+        Me.uxGroupBoxConnection = New System.Windows.Forms.GroupBox()
+        Me.rbQMDFile = New System.Windows.Forms.RadioButton()
+        Me.rbPDADataBase = New System.Windows.Forms.RadioButton()
+        Me.rbMainDataBase = New System.Windows.Forms.RadioButton()
+        Me.uxGroupBoxCondition = New System.Windows.Forms.GroupBox()
+        Me.txtWhereQuery = New System.Windows.Forms.TextBox()
+        Me.uxSaveFileDialogSAS = New System.Windows.Forms.SaveFileDialog()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Splitter4 = New System.Windows.Forms.Splitter()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.uxPencilPictureBox = New System.Windows.Forms.PictureBox()
+        Me.uxPicturePDA = New System.Windows.Forms.PictureBox()
+        Me.uxPictureComputer = New System.Windows.Forms.PictureBox()
+        Me.uxPictureSDFFile = New System.Windows.Forms.PictureBox()
+        Me.Splitter3 = New System.Windows.Forms.Splitter()
+        Me.Splitter2 = New System.Windows.Forms.Splitter()
+        Me.uxOpenQMDToImport = New System.Windows.Forms.OpenFileDialog()
+        Me.Splitter5 = New System.Windows.Forms.Splitter()
+        Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
+        Me.uxRowsToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.uxReadOnlyToolStripStatusLabel = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.uxDataGridViewX = New DevComponents.DotNetBar.Controls.DataGridViewX()
         Me.StyleManager1 = New DevComponents.DotNetBar.StyleManager(Me.components)
-        Me.Bar1 = New DevComponents.DotNetBar.Bar
-        Me.butEdit = New DevComponents.DotNetBar.ButtonItem
-        Me.butAcceptChanges = New DevComponents.DotNetBar.ButtonItem
-        Me.butDorpChanges = New DevComponents.DotNetBar.ButtonItem
+        Me.Bar1 = New DevComponents.DotNetBar.Bar()
+        Me.butEdit = New DevComponents.DotNetBar.ButtonItem()
+        Me.butAcceptChanges = New DevComponents.DotNetBar.ButtonItem()
+        Me.butDorpChanges = New DevComponents.DotNetBar.ButtonItem()
         Me.ImageList1 = New System.Windows.Forms.ImageList(Me.components)
-        Me.PruebaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.uxStructureTree = New DataManager.StructureControl2
+        Me.uxStructureTree = New DataManager.StructureControl2()
         Me.BindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.MenuStrip1.SuspendLayout()
         Me.uxGroupBoxOptions.SuspendLayout()
@@ -113,105 +113,105 @@ Partial Class DataManagerForm
         '
         Me.FileToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.uxConnect_DisconnectPDAMenuItem, Me.uxOpenQMDToolStripMenuItem, Me.ToolStripSeparator3, Me.OpenMainDatabaseToolStripMenuItem, Me.CloseToolStripMenuItem})
         Me.FileToolStripMenuItem.Name = "FileToolStripMenuItem"
-        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(35, 20)
+        Me.FileToolStripMenuItem.Size = New System.Drawing.Size(37, 20)
         Me.FileToolStripMenuItem.Text = "File"
         '
         'uxConnect_DisconnectPDAMenuItem
         '
         Me.uxConnect_DisconnectPDAMenuItem.Name = "uxConnect_DisconnectPDAMenuItem"
-        Me.uxConnect_DisconnectPDAMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.uxConnect_DisconnectPDAMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.uxConnect_DisconnectPDAMenuItem.Text = "Connect PDA"
         '
         'uxOpenQMDToolStripMenuItem
         '
         Me.uxOpenQMDToolStripMenuItem.Name = "uxOpenQMDToolStripMenuItem"
-        Me.uxOpenQMDToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.uxOpenQMDToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.uxOpenQMDToolStripMenuItem.Text = "Open QMD File..."
         '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
-        Me.ToolStripSeparator3.Size = New System.Drawing.Size(182, 6)
+        Me.ToolStripSeparator3.Size = New System.Drawing.Size(181, 6)
         '
         'OpenMainDatabaseToolStripMenuItem
         '
         Me.OpenMainDatabaseToolStripMenuItem.Name = "OpenMainDatabaseToolStripMenuItem"
-        Me.OpenMainDatabaseToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.OpenMainDatabaseToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.OpenMainDatabaseToolStripMenuItem.Text = "Open Main Database"
         '
         'CloseToolStripMenuItem
         '
         Me.CloseToolStripMenuItem.Name = "CloseToolStripMenuItem"
-        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(185, 22)
+        Me.CloseToolStripMenuItem.Size = New System.Drawing.Size(184, 22)
         Me.CloseToolStripMenuItem.Text = "Close"
         '
         'ImportToolStripMenuItem
         '
         Me.ImportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.uxImputPDAToolStripMenuItem, Me.uxImputFromQMDFilesToolStripMenuItem})
         Me.ImportToolStripMenuItem.Name = "ImportToolStripMenuItem"
-        Me.ImportToolStripMenuItem.Size = New System.Drawing.Size(51, 20)
+        Me.ImportToolStripMenuItem.Size = New System.Drawing.Size(55, 20)
         Me.ImportToolStripMenuItem.Text = "Import"
         '
         'uxImputPDAToolStripMenuItem
         '
         Me.uxImputPDAToolStripMenuItem.Name = "uxImputPDAToolStripMenuItem"
-        Me.uxImputPDAToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
+        Me.uxImputPDAToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.uxImputPDAToolStripMenuItem.Text = "Import From PDA"
         '
         'uxImputFromQMDFilesToolStripMenuItem
         '
         Me.uxImputFromQMDFilesToolStripMenuItem.Name = "uxImputFromQMDFilesToolStripMenuItem"
-        Me.uxImputFromQMDFilesToolStripMenuItem.Size = New System.Drawing.Size(214, 22)
+        Me.uxImputFromQMDFilesToolStripMenuItem.Size = New System.Drawing.Size(215, 22)
         Me.uxImputFromQMDFilesToolStripMenuItem.Text = "Import From QMD File(s)..."
         '
         'ExportToolStripMenuItem
         '
         Me.ExportToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.uxExportToSASToolStripMenuItem, Me.ToolStripSeparator2, Me.uxExportToMainDBToolStripMenuItem})
         Me.ExportToolStripMenuItem.Name = "ExportToolStripMenuItem"
-        Me.ExportToolStripMenuItem.Size = New System.Drawing.Size(51, 20)
+        Me.ExportToolStripMenuItem.Size = New System.Drawing.Size(52, 20)
         Me.ExportToolStripMenuItem.Text = "Export"
         '
         'uxExportToSASToolStripMenuItem
         '
         Me.uxExportToSASToolStripMenuItem.Name = "uxExportToSASToolStripMenuItem"
-        Me.uxExportToSASToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.uxExportToSASToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.uxExportToSASToolStripMenuItem.Text = "Export To SAS"
         '
         'ToolStripSeparator2
         '
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
-        Me.ToolStripSeparator2.Size = New System.Drawing.Size(170, 6)
+        Me.ToolStripSeparator2.Size = New System.Drawing.Size(169, 6)
         '
         'uxExportToMainDBToolStripMenuItem
         '
         Me.uxExportToMainDBToolStripMenuItem.Name = "uxExportToMainDBToolStripMenuItem"
-        Me.uxExportToMainDBToolStripMenuItem.Size = New System.Drawing.Size(173, 22)
+        Me.uxExportToMainDBToolStripMenuItem.Size = New System.Drawing.Size(172, 22)
         Me.uxExportToMainDBToolStripMenuItem.Text = "Export To Main DB"
         '
         'QueryToolStripMenuItem
         '
         Me.QueryToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExecuteQueryToolStripMenuItem, Me.ClearQueryToolStripMenuItem})
         Me.QueryToolStripMenuItem.Name = "QueryToolStripMenuItem"
-        Me.QueryToolStripMenuItem.Size = New System.Drawing.Size(49, 20)
+        Me.QueryToolStripMenuItem.Size = New System.Drawing.Size(51, 20)
         Me.QueryToolStripMenuItem.Text = "Query"
         '
         'ExecuteQueryToolStripMenuItem
         '
         Me.ExecuteQueryToolStripMenuItem.Name = "ExecuteQueryToolStripMenuItem"
-        Me.ExecuteQueryToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.ExecuteQueryToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.ExecuteQueryToolStripMenuItem.Text = "Execute Query"
         '
         'ClearQueryToolStripMenuItem
         '
         Me.ClearQueryToolStripMenuItem.Name = "ClearQueryToolStripMenuItem"
-        Me.ClearQueryToolStripMenuItem.Size = New System.Drawing.Size(157, 22)
+        Me.ClearQueryToolStripMenuItem.Size = New System.Drawing.Size(149, 22)
         Me.ClearQueryToolStripMenuItem.Text = "Clear Query"
         '
         'ViewToolStripMenuItem
         '
         Me.ViewToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.uxMainDataBaseToolStripMenuItem, Me.uxPDADataBaseToolStripMenuItem, Me.uxQMDFileToolStripMenuItem})
         Me.ViewToolStripMenuItem.Name = "ViewToolStripMenuItem"
-        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(41, 20)
+        Me.ViewToolStripMenuItem.Size = New System.Drawing.Size(44, 20)
         Me.ViewToolStripMenuItem.Text = "View"
         '
         'uxMainDataBaseToolStripMenuItem
@@ -219,20 +219,26 @@ Partial Class DataManagerForm
         Me.uxMainDataBaseToolStripMenuItem.Checked = True
         Me.uxMainDataBaseToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked
         Me.uxMainDataBaseToolStripMenuItem.Name = "uxMainDataBaseToolStripMenuItem"
-        Me.uxMainDataBaseToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.uxMainDataBaseToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.uxMainDataBaseToolStripMenuItem.Text = "Main Data Base"
         '
         'uxPDADataBaseToolStripMenuItem
         '
         Me.uxPDADataBaseToolStripMenuItem.Name = "uxPDADataBaseToolStripMenuItem"
-        Me.uxPDADataBaseToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.uxPDADataBaseToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.uxPDADataBaseToolStripMenuItem.Text = "PDA Data Base"
         '
         'uxQMDFileToolStripMenuItem
         '
         Me.uxQMDFileToolStripMenuItem.Name = "uxQMDFileToolStripMenuItem"
-        Me.uxQMDFileToolStripMenuItem.Size = New System.Drawing.Size(159, 22)
+        Me.uxQMDFileToolStripMenuItem.Size = New System.Drawing.Size(155, 22)
         Me.uxQMDFileToolStripMenuItem.Text = "QMD File"
+        '
+        'PruebaToolStripMenuItem
+        '
+        Me.PruebaToolStripMenuItem.Name = "PruebaToolStripMenuItem"
+        Me.PruebaToolStripMenuItem.Size = New System.Drawing.Size(56, 20)
+        Me.PruebaToolStripMenuItem.Text = "Prueba"
         '
         'uxOpenFileDialog
         '
@@ -480,13 +486,13 @@ Partial Class DataManagerForm
         'uxRowsToolStripStatusLabel
         '
         Me.uxRowsToolStripStatusLabel.Name = "uxRowsToolStripStatusLabel"
-        Me.uxRowsToolStripStatusLabel.Size = New System.Drawing.Size(46, 17)
+        Me.uxRowsToolStripStatusLabel.Size = New System.Drawing.Size(47, 17)
         Me.uxRowsToolStripStatusLabel.Text = "Rows: 0"
         '
         'uxReadOnlyToolStripStatusLabel
         '
         Me.uxReadOnlyToolStripStatusLabel.Name = "uxReadOnlyToolStripStatusLabel"
-        Me.uxReadOnlyToolStripStatusLabel.Size = New System.Drawing.Size(164, 17)
+        Me.uxReadOnlyToolStripStatusLabel.Size = New System.Drawing.Size(178, 17)
         Me.uxReadOnlyToolStripStatusLabel.Text = "uxReadOnlyToolStripStatusLabel"
         '
         'uxDataGridViewX
@@ -496,36 +502,36 @@ Partial Class DataManagerForm
         Me.uxDataGridViewX.AllowUserToOrderColumns = True
         Me.uxDataGridViewX.AllowUserToResizeColumns = False
         Me.uxDataGridViewX.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.uxDataGridViewX.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.ControlText
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.uxDataGridViewX.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.uxDataGridViewX.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.ControlText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.uxDataGridViewX.DefaultCellStyle = DataGridViewCellStyle2
         Me.uxDataGridViewX.Dock = System.Windows.Forms.DockStyle.Fill
         Me.uxDataGridViewX.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically
         Me.uxDataGridViewX.GridColor = System.Drawing.Color.FromArgb(CType(CType(208, Byte), Integer), CType(CType(215, Byte), Integer), CType(CType(229, Byte), Integer))
         Me.uxDataGridViewX.Location = New System.Drawing.Point(271, 185)
         Me.uxDataGridViewX.Name = "uxDataGridViewX"
         Me.uxDataGridViewX.ReadOnly = True
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.uxDataGridViewX.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.uxDataGridViewX.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.uxDataGridViewX.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.uxDataGridViewX.Size = New System.Drawing.Size(803, 407)
         Me.uxDataGridViewX.TabIndex = 11
@@ -581,12 +587,6 @@ Partial Class DataManagerForm
         Me.ImageList1.TransparentColor = System.Drawing.Color.Transparent
         Me.ImageList1.Images.SetKeyName(0, "Cancel Small.png")
         '
-        'PruebaToolStripMenuItem
-        '
-        Me.PruebaToolStripMenuItem.Name = "PruebaToolStripMenuItem"
-        Me.PruebaToolStripMenuItem.Size = New System.Drawing.Size(53, 20)
-        Me.PruebaToolStripMenuItem.Text = "Prueba"
-        '
         'uxStructureTree
         '
         Me.uxStructureTree.ColumnsInfo = Nothing
@@ -617,7 +617,7 @@ Partial Class DataManagerForm
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "DataManagerForm"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
-        Me.Text = "Data Manager"
+        Me.Text = "7"
         Me.WindowState = System.Windows.Forms.FormWindowState.Maximized
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
@@ -692,12 +692,12 @@ Partial Class DataManagerForm
     Friend WithEvents uxPencilPictureBox As System.Windows.Forms.PictureBox
     Friend WithEvents uxDataGridViewX As DevComponents.DotNetBar.Controls.DataGridViewX
     Friend WithEvents StyleManager1 As DevComponents.DotNetBar.StyleManager
-    Friend WithEvents Bar1 As DevComponents.DotNetBar.Bar
-    Friend WithEvents butEdit As DevComponents.DotNetBar.ButtonItem
-    Friend WithEvents butAcceptChanges As DevComponents.DotNetBar.ButtonItem
-    Friend WithEvents butDorpChanges As DevComponents.DotNetBar.ButtonItem
     Friend WithEvents ImageList1 As System.Windows.Forms.ImageList
     Friend WithEvents PruebaToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents BindingSource1 As System.Windows.Forms.BindingSource
+    Private WithEvents Bar1 As DevComponents.DotNetBar.Bar
+    Private WithEvents butEdit As DevComponents.DotNetBar.ButtonItem
+    Private WithEvents butAcceptChanges As DevComponents.DotNetBar.ButtonItem
+    Private WithEvents butDorpChanges As DevComponents.DotNetBar.ButtonItem
 
 End Class
