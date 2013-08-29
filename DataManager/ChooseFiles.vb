@@ -34,6 +34,22 @@ Public Class ChooseFiles
     End Sub
     Private QMDFiles As List(Of String)
     Private QMDFilesClass As List(Of DirectoryClass)
+    Private Provider_ As MainDatabase.SQLProviders
+
+    ''' <summary>
+    ''' Sets the SQL providers: SQLServer or SQLLIte check ENUM MainDatabase.SQLProviders
+    ''' </summary>
+    ''' <value></value>
+    ''' <remarks></remarks>
+    Public Property Provider() As MainDatabase.SQLProviders
+        Set(ByVal value As MainDatabase.SQLProviders)
+            Provider_ = value
+
+        End Set
+        Get
+            Return Provider_
+        End Get
+    End Property
 
     Protected Overrides Sub OnLoad(ByVal e As EventArgs)
 
@@ -46,9 +62,11 @@ Public Class ChooseFiles
             '}
             'catch { }
             'stream.Close();
+
             '
             FillDataProviderCombo()
             '
+            LblTextSource.Text = LblTextSource.Text.Replace("{0}", Provider_.ToString())
             Me.treeViewFolderBrowser1.DataSource = TryCast(_cmbDataProvider.Items(0), ITreeViewFolderBrowserDataProvider)
             Me.treeViewFolderBrowser1.RootFolder = System.Environment.SpecialFolder.MyComputer
 
