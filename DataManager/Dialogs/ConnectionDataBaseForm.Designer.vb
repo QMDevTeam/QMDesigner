@@ -22,20 +22,22 @@ Partial Class ConnectionDataBaseForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.butAcept = New System.Windows.Forms.Button
-        Me.butCancel = New System.Windows.Forms.Button
-        Me.txtServerName = New System.Windows.Forms.TextBox
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.cmbAuthentication = New System.Windows.Forms.ComboBox
-        Me.lblUsername = New System.Windows.Forms.Label
-        Me.lblPassword = New System.Windows.Forms.Label
-        Me.txtUsername = New System.Windows.Forms.TextBox
-        Me.txtPassword = New System.Windows.Forms.TextBox
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.txtDataBase = New System.Windows.Forms.TextBox
-        Me.rbtConnectMDF = New System.Windows.Forms.RadioButton
-        Me.rbtConnectSQLServer = New System.Windows.Forms.RadioButton
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.butAcept = New System.Windows.Forms.Button()
+        Me.butCancel = New System.Windows.Forms.Button()
+        Me.txtServerName = New System.Windows.Forms.TextBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.cmbAuthentication = New System.Windows.Forms.ComboBox()
+        Me.lblUsername = New System.Windows.Forms.Label()
+        Me.lblPassword = New System.Windows.Forms.Label()
+        Me.txtUsername = New System.Windows.Forms.TextBox()
+        Me.txtPassword = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.txtDataBase = New System.Windows.Forms.TextBox()
+        Me.rbtConnectMDF = New System.Windows.Forms.RadioButton()
+        Me.rbtConnectSQLServer = New System.Windows.Forms.RadioButton()
+        Me.rbtn_SqlLite = New System.Windows.Forms.RadioButton()
+        Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.SuspendLayout()
         '
         'Label1
@@ -51,7 +53,7 @@ Partial Class ConnectionDataBaseForm
         '
         Me.butAcept.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.butAcept.DialogResult = System.Windows.Forms.DialogResult.OK
-        Me.butAcept.Location = New System.Drawing.Point(86, 312)
+        Me.butAcept.Location = New System.Drawing.Point(152, 364)
         Me.butAcept.Name = "butAcept"
         Me.butAcept.Size = New System.Drawing.Size(75, 23)
         Me.butAcept.TabIndex = 6
@@ -62,7 +64,7 @@ Partial Class ConnectionDataBaseForm
         '
         Me.butCancel.Anchor = System.Windows.Forms.AnchorStyles.Top
         Me.butCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.butCancel.Location = New System.Drawing.Point(197, 312)
+        Me.butCancel.Location = New System.Drawing.Point(263, 364)
         Me.butCancel.Name = "butCancel"
         Me.butCancel.Size = New System.Drawing.Size(75, 23)
         Me.butCancel.TabIndex = 7
@@ -72,11 +74,11 @@ Partial Class ConnectionDataBaseForm
         'txtServerName
         '
         Me.txtServerName.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtServerName.Enabled = False
         Me.txtServerName.Location = New System.Drawing.Point(146, 93)
         Me.txtServerName.Name = "txtServerName"
-        Me.txtServerName.Size = New System.Drawing.Size(168, 20)
+        Me.txtServerName.Size = New System.Drawing.Size(294, 20)
         Me.txtServerName.TabIndex = 1
         '
         'Label3
@@ -92,14 +94,14 @@ Partial Class ConnectionDataBaseForm
         '
         Me.cmbAuthentication.AllowDrop = True
         Me.cmbAuthentication.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmbAuthentication.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmbAuthentication.Enabled = False
         Me.cmbAuthentication.FormattingEnabled = True
         Me.cmbAuthentication.Items.AddRange(New Object() {"Windows Authentication", "Server Authentication"})
         Me.cmbAuthentication.Location = New System.Drawing.Point(146, 161)
         Me.cmbAuthentication.Name = "cmbAuthentication"
-        Me.cmbAuthentication.Size = New System.Drawing.Size(168, 21)
+        Me.cmbAuthentication.Size = New System.Drawing.Size(294, 21)
         Me.cmbAuthentication.TabIndex = 3
         '
         'lblUsername
@@ -125,22 +127,22 @@ Partial Class ConnectionDataBaseForm
         'txtUsername
         '
         Me.txtUsername.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtUsername.Enabled = False
         Me.txtUsername.Location = New System.Drawing.Point(146, 220)
         Me.txtUsername.Name = "txtUsername"
-        Me.txtUsername.Size = New System.Drawing.Size(168, 20)
+        Me.txtUsername.Size = New System.Drawing.Size(294, 20)
         Me.txtUsername.TabIndex = 4
         '
         'txtPassword
         '
         Me.txtPassword.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtPassword.Enabled = False
         Me.txtPassword.Location = New System.Drawing.Point(146, 260)
         Me.txtPassword.Name = "txtPassword"
         Me.txtPassword.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtPassword.Size = New System.Drawing.Size(168, 20)
+        Me.txtPassword.Size = New System.Drawing.Size(294, 20)
         Me.txtPassword.TabIndex = 5
         '
         'Label2
@@ -155,18 +157,18 @@ Partial Class ConnectionDataBaseForm
         'txtDataBase
         '
         Me.txtDataBase.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtDataBase.Enabled = False
         Me.txtDataBase.Location = New System.Drawing.Point(146, 127)
         Me.txtDataBase.Name = "txtDataBase"
-        Me.txtDataBase.Size = New System.Drawing.Size(168, 20)
+        Me.txtDataBase.Size = New System.Drawing.Size(294, 20)
         Me.txtDataBase.TabIndex = 2
         '
         'rbtConnectMDF
         '
         Me.rbtConnectMDF.AutoSize = True
         Me.rbtConnectMDF.Checked = True
-        Me.rbtConnectMDF.Location = New System.Drawing.Point(105, 24)
+        Me.rbtConnectMDF.Location = New System.Drawing.Point(96, 12)
         Me.rbtConnectMDF.Name = "rbtConnectMDF"
         Me.rbtConnectMDF.Size = New System.Drawing.Size(167, 17)
         Me.rbtConnectMDF.TabIndex = 13
@@ -177,12 +179,29 @@ Partial Class ConnectionDataBaseForm
         'rbtConnectSQLServer
         '
         Me.rbtConnectSQLServer.AutoSize = True
-        Me.rbtConnectSQLServer.Location = New System.Drawing.Point(105, 47)
+        Me.rbtConnectSQLServer.Location = New System.Drawing.Point(96, 35)
         Me.rbtConnectSQLServer.Name = "rbtConnectSQLServer"
         Me.rbtConnectSQLServer.Size = New System.Drawing.Size(135, 17)
         Me.rbtConnectSQLServer.TabIndex = 14
         Me.rbtConnectSQLServer.Text = "Connect to SQL Server"
         Me.rbtConnectSQLServer.UseVisualStyleBackColor = True
+        '
+        'rbtn_SqlLite
+        '
+        Me.rbtn_SqlLite.AutoSize = True
+        Me.rbtn_SqlLite.Location = New System.Drawing.Point(96, 59)
+        Me.rbtn_SqlLite.Name = "rbtn_SqlLite"
+        Me.rbtn_SqlLite.Size = New System.Drawing.Size(144, 17)
+        Me.rbtn_SqlLite.TabIndex = 15
+        Me.rbtn_SqlLite.TabStop = True
+        Me.rbtn_SqlLite.Text = "Connect using SqlLite file"
+        Me.rbtn_SqlLite.UseVisualStyleBackColor = True
+        Me.rbtn_SqlLite.Visible = False
+        '
+        'OpenFileDialog1
+        '
+        Me.OpenFileDialog1.FileName = "OpenFileDialog1"
+        Me.OpenFileDialog1.Filter = "SqlLite Database File|*.db"
         '
         'ConnectionDataBaseForm
         '
@@ -190,7 +209,8 @@ Partial Class ConnectionDataBaseForm
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.CancelButton = Me.butCancel
-        Me.ClientSize = New System.Drawing.Size(370, 351)
+        Me.ClientSize = New System.Drawing.Size(496, 447)
+        Me.Controls.Add(Me.rbtn_SqlLite)
         Me.Controls.Add(Me.rbtConnectSQLServer)
         Me.Controls.Add(Me.rbtConnectMDF)
         Me.Controls.Add(Me.txtDataBase)
@@ -229,4 +249,6 @@ Partial Class ConnectionDataBaseForm
     Friend WithEvents txtDataBase As System.Windows.Forms.TextBox
     Friend WithEvents rbtConnectMDF As System.Windows.Forms.RadioButton
     Friend WithEvents rbtConnectSQLServer As System.Windows.Forms.RadioButton
+    Friend WithEvents rbtn_SqlLite As System.Windows.Forms.RadioButton
+    Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
 End Class

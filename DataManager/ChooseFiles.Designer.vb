@@ -20,21 +20,11 @@ Partial Class ChooseFiles
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ChooseFiles))
-        Me.txtMemo = New System.Windows.Forms.RichTextBox
-        Me.Button2 = New System.Windows.Forms.Button
-        Me._cmbDataProvider = New System.Windows.Forms.ComboBox
-        Me.treeViewFolderBrowser1 = New Raccoom.Windows.Forms.TreeViewFolderBrowser
-        Me.Label1 = New System.Windows.Forms.Label
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me._cmbDataProvider = New System.Windows.Forms.ComboBox()
+        Me.treeViewFolderBrowser1 = New Raccoom.Windows.Forms.TreeViewFolderBrowser()
+        Me.LblTextSource = New System.Windows.Forms.Label()
         Me.SuspendLayout()
-        '
-        'txtMemo
-        '
-        Me.txtMemo.Location = New System.Drawing.Point(885, 64)
-        Me.txtMemo.Margin = New System.Windows.Forms.Padding(2)
-        Me.txtMemo.Name = "txtMemo"
-        Me.txtMemo.Size = New System.Drawing.Size(336, 434)
-        Me.txtMemo.TabIndex = 7
-        Me.txtMemo.Text = ""
         '
         'Button2
         '
@@ -66,26 +56,25 @@ Partial Class ChooseFiles
         Me.treeViewFolderBrowser1.Name = "treeViewFolderBrowser1"
         Me.treeViewFolderBrowser1.RootFolder = System.Environment.SpecialFolder.MyPictures
         Me.treeViewFolderBrowser1.SelectedDirectories = CType(resources.GetObject("treeViewFolderBrowser1.SelectedDirectories"), System.Collections.Specialized.StringCollection)
-        Me.treeViewFolderBrowser1.Size = New System.Drawing.Size(845, 434)
+        Me.treeViewFolderBrowser1.Size = New System.Drawing.Size(1185, 434)
         Me.treeViewFolderBrowser1.TabIndex = 4
         '
-        'Label1
+        'LblTextSource
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(33, 34)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(184, 24)
-        Me.Label1.TabIndex = 8
-        Me.Label1.Text = "Select the QMD files:"
+        Me.LblTextSource.AutoSize = True
+        Me.LblTextSource.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblTextSource.Location = New System.Drawing.Point(33, 34)
+        Me.LblTextSource.Name = "LblTextSource"
+        Me.LblTextSource.Size = New System.Drawing.Size(319, 24)
+        Me.LblTextSource.TabIndex = 8
+        Me.LblTextSource.Text = "Select the QMD files from Source {0}:"
         '
         'ChooseFiles
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1232, 509)
-        Me.Controls.Add(Me.Label1)
-        Me.Controls.Add(Me.txtMemo)
+        Me.Controls.Add(Me.LblTextSource)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me._cmbDataProvider)
         Me.Controls.Add(Me.treeViewFolderBrowser1)
@@ -95,9 +84,8 @@ Partial Class ChooseFiles
         Me.PerformLayout()
 
     End Sub
-    Private WithEvents txtMemo As System.Windows.Forms.RichTextBox
     Private WithEvents Button2 As System.Windows.Forms.Button
     Private WithEvents _cmbDataProvider As System.Windows.Forms.ComboBox
     Private WithEvents treeViewFolderBrowser1 As Raccoom.Windows.Forms.TreeViewFolderBrowser
-    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents LblTextSource As System.Windows.Forms.Label
 End Class

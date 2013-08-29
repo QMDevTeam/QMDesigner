@@ -9,12 +9,47 @@ Imports Raccoom.Windows.Forms
 Imports System.IO
 
 
+
 Public Class ChooseFiles
     Inherits Form
+
+    Public Class NameComparer
+        Implements IComparer(Of String)
+        Public Function Compare(x As String, y As String) As Integer Implements IComparer(Of String).Compare
+            Return String.Compare(x, y, True)
+        End Function
+    End Class
+
+    Public Class DirectoryClass
+        Public filename As String
+        Public path As String
+        Public Sub New(ByVal pFilename As String, ByVal pPath As String)
+            filename = pFilename
+            path = pPath
+        End Sub
+    End Class
+
     Public Sub New()
         InitializeComponent()
     End Sub
     Private QMDFiles As List(Of String)
+    Private QMDFilesClass As List(Of DirectoryClass)
+    Private Provider_ As MainDatabase.SQLProviders
+
+    ''' <summary>
+    ''' Sets the SQL providers: SQLServer or SQLLIte check ENUM MainDatabase.SQLProviders
+    ''' </summary>
+    ''' <value></value>
+    ''' <remarks></remarks>
+    Public Property Provider() As MainDatabase.SQLProviders
+        Set(ByVal value As MainDatabase.SQLProviders)
+            Provider_ = value
+
+        End Set
+        Get
+            Return Provider_
+        End Get
+    End Property
 
     Protected Overrides Sub OnLoad(ByVal e As EventArgs)
 
@@ -27,9 +62,11 @@ Public Class ChooseFiles
             '}
             'catch { }
             'stream.Close();
+
             '
             FillDataProviderCombo()
             '
+            LblTextSource.Text = LblTextSource.Text.Replace("{0}", Provider_.ToString())
             Me.treeViewFolderBrowser1.DataSource = TryCast(_cmbDataProvider.Items(0), ITreeViewFolderBrowserDataProvider)
             Me.treeViewFolderBrowser1.RootFolder = System.Environment.SpecialFolder.MyComputer
 
@@ -40,6 +77,7 @@ Public Class ChooseFiles
 
             treeViewFolderBrowser1.Nodes(0).Expand()
             QMDFiles = New List(Of String)
+            QMDFilesClass = New List(Of DirectoryClass)
         End If
 
         MyBase.OnLoad(e)
@@ -67,13 +105,16 @@ Public Class ChooseFiles
     Public Function GetQMDFiles() As List(Of String)
         Return QMDFiles
     End Function
+    Public Function GetQMDFilesClass() As List(Of DirectoryClass)
+        Return QMDFilesClass
+    End Function
+
     Private Sub WriteTextBoxQMDfiles(ByVal treeNode As TreeNode, ByVal nodeChecked As Boolean)
         For Each node As TreeNode In treeNode.Nodes
 
             If node.Checked = nodeChecked Then
                 If String.Compare(Convert.ToString(node.Tag), "file") = 0 Then
                     Dim nodePt As TreeNodePath = TryCast(node.Parent, TreeNodePath)
-                    txtMemo.Text = txtMemo.Text + vbCr & vbLf + nodePt.Path + "\" + node.Name
                 End If
             End If
 
@@ -91,8 +132,8 @@ Public Class ChooseFiles
             If node.Checked = nodeChecked Then
                 If String.Compare(Convert.ToString(node.Tag), "file") = 0 Then
                     Dim nodePt As TreeNodePath = TryCast(node.Parent, TreeNodePath)
-                    txtMemo.Text = txtMemo.Text + vbCr & vbLf + nodePt.Path + "\" + node.Name
                     QMDFiles.Add(nodePt.Path + "\" + node.Name)
+                    QMDFilesClass.Add(New DirectoryClass(node.Name, nodePt.Path + "\" + node.Name))
                 End If
             End If
 
@@ -136,13 +177,29 @@ Public Class ChooseFiles
     Private Sub treeViewFolderBrowser1_BeforeCheck(ByVal sender As Object, ByVal e As TreeViewCancelEventArgs) Handles treeViewFolderBrowser1.BeforeCheck
 
         If e.Action = TreeViewAction.ByMouse Then
-            If Not e.Node.Checked Then
-                e.Node.ExpandAll()
-            Else
-                e.Node.Collapse()
-            End If
-            CheckAllChildNodes(e.Node, Not e.Node.Checked)
+            If e.Node.Parent IsNot Nothing Then
 
+
+                If Not e.Node.Checked Then
+                    e.Node.ExpandAll()
+                Else
+                    e.Node.Collapse()
+                End If
+                CheckAllChildNodes(e.Node, Not e.Node.Checked)
+            Else
+                If MessageBox.Show("Bulk import will take more time as you expected in checking the subfolders of the selected node. Do you want to continue?", "Time processing", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2) = Windows.Forms.DialogResult.OK Then
+
+                    If Not e.Node.Checked Then
+                        e.Node.ExpandAll()
+                    Else
+                        e.Node.Collapse()
+                    End If
+                    CheckAllChildNodes(e.Node, Not e.Node.Checked)
+                Else
+                    e.Cancel = True
+
+                End If
+            End If
         End If
     End Sub
 
@@ -167,8 +224,8 @@ Public Class ChooseFiles
 
             Dim nodefound As TreeNode() = treeNode.Nodes.Find(filtered.Name, False)
             If nodefound.Length <= 0 Then
-                treeNode.Nodes.Add(newnode)
-                treeNode.Expand()
+                TreeNode.Nodes.Add(newnode)
+                TreeNode.Expand()
             End If
         Next
     End Sub
@@ -252,8 +309,8 @@ Public Class ChooseFiles
     '}
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        txtMemo.Clear()
         QMDFiles.Clear()
+        QMDFilesClass.Clear()
         For Each root As TreeNode In treeViewFolderBrowser1.Nodes
             WriteCheckedNodes(root, True)
         Next
