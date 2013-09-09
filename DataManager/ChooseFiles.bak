@@ -15,22 +15,6 @@ Public Class ChooseFiles
         InitializeComponent()
     End Sub
     Private QMDFiles As List(Of String)
-    Private Provider_ As MainDatabase.SQLProviders
-
-    ''' <summary>
-    ''' Sets the SQL providers: SQLServer or SQLLIte check ENUM MainDatabase.SQLProviders
-    ''' </summary>
-    ''' <value></value>
-    ''' <remarks></remarks>
-    Public Property Provider() As MainDatabase.SQLProviders
-        Set(ByVal value As MainDatabase.SQLProviders)
-            Provider_ = value
-
-        End Set
-        Get
-            Return Provider_
-        End Get
-    End Property
 
     Protected Overrides Sub OnLoad(ByVal e As EventArgs)
 
@@ -164,11 +148,6 @@ Public Class ChooseFiles
 
     Private Sub Checkfilterfiles(ByVal treeNode As TreeNode)
         Dim filters As String = "*.qmd"
-
-        If Provider_ = MainDatabase.SQLProviders.SQLLite Then
-            lblSelectFileMsj.Text = lblSelectFileMsj.Text.Replace("QMD", "DB (SqlLite)")
-            filters = "*.db"
-        End If
 
 
         Dim nodePt As TreeNodePath = TryCast(treeNode, TreeNodePath)

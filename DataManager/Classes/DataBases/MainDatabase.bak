@@ -30,11 +30,7 @@ Public Class MainDatabase
     Private _SQLPassword As String
     Private _SQLIsTrustedConnection As Boolean
     Private _SQLDataBase As String
-    Enum SQLProviders
-        SQLSever = 1
-        SQLLite = 2
-        MDF = 3
-    End Enum
+
 
     ''' <summary>
     ''' 

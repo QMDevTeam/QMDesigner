@@ -37,6 +37,7 @@ Public Class DataManagerForm
     Private _editMode As Boolean
     Private _tablesToChange As List(Of TableInfo)
 
+    Private _Provider As MainDatabase.SQLProviders
     ''' <summary>
     ''' Return the Current External DataBase.  Returns Nothing if the current DataSource is the Main DataBase
     ''' </summary>
@@ -523,12 +524,17 @@ Public Class DataManagerForm
     ''' Import Multiple QMD Files
     ''' </summary>
     ''' <remarks></remarks>
-    Private Sub ImportMultipleQMDFiles()
+    Private Sub ImportMultipleQMDFiles(ByVal IsSQLLIte As Boolean)
 
 
         Dim FileseToChoose As ChooseFiles = New ChooseFiles()
-        ''FileseToChoose.Show()
+        If IsSQLLIte Then
+            FileseToChoose.Provider = MainDatabase.SQLProviders.SQLLite
+        ElseIf Not IsSQLLIte Then
+            FileseToChoose.Provider = MainDatabase.SQLProviders.SQLSever
+        End If
 
+        ''FileseToChoose.Show()
 
 
 
@@ -549,7 +555,7 @@ Public Class DataManagerForm
             For Each fileName As String In fileNames
 
                 temporalConnection = New ExternalDatabase
-
+                temporalConnection.Provider = FileseToChoose.Provider()
                 Try
                     'Connect to the DataBase
                     temporalConnection.SetConnectionParams(fileName, "Qu3st10nn@1r3M0b1l3")
@@ -880,6 +886,17 @@ Public Class DataManagerForm
                         'Ask another connection string
                         _mainDB.CloseConnection()
                     End If
+                    '' ElseIf ConnectionDialog.GetConnectedToSQLLiteSucessfull Then
+
+                    '_mainDB.ConnectToSQLite(ConnectionDialog.GetSqlLite_Filename)
+
+                    'If _mainDB.VerifyDatabaseVersionAndStudy(False) Then
+                    '    'Everything is fine
+                    '    Exit While
+                    'Else
+                    '    'Ask another connection string
+                    '    _mainDB.CloseConnection()
+                    'End If
 
                 End If
 
@@ -889,6 +906,15 @@ Public Class DataManagerForm
             End If
 
         End While
+
+        'If ConnectionDialog.GetConnectToSQLServer() Then
+
+        '    _Provider = MainDatabase.SQLProviders.SQLSever
+        'ElseIf ConnectionDialog.GetConnectedToSQLLiteSucessfull() Then
+        '    _Provider = MainDatabase.SQLProviders.SQLLite
+        'ElseIf ConnectionDialog.GetConnectToMDF() Then
+        '    _Provider = MainDatabase.SQLProviders.MDF
+        'End If
 
     End Sub
 
@@ -1101,11 +1127,11 @@ Public Class DataManagerForm
                 Case Windows.Forms.DialogResult.Yes
                     ImportData(_QMDDataBase)
                 Case Windows.Forms.DialogResult.No
-                    ImportMultipleQMDFiles()
+                    ImportMultipleQMDFiles(False)
                 Case Windows.Forms.DialogResult.Cancel
             End Select
         Else
-            ImportMultipleQMDFiles()
+            ImportMultipleQMDFiles(False)
         End If
     End Sub
 
@@ -1427,5 +1453,25 @@ Public Class DataManagerForm
 
     Private Sub BindingSource1_PositionChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BindingSource1.PositionChanged
 
+    End Sub
+    ''' <summary>
+    ''' Import multiple DB FILES (SQLLITE)
+    ''' </summary>
+    ''' <param name="sender"></param>
+    ''' <param name="e"></param>
+    ''' <remarks></remarks>
+    Private Sub ImportFromDBFilessToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ImportFromDBFilessToolStripMenuItem.Click
+        If rbQMDFile.Enabled Then
+
+            Select Case MessageBox.Show("Do you want to import the opened DB File?", "Import DB File", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question, MessageBoxDefaultButton.Button3)
+                Case Windows.Forms.DialogResult.Yes
+                    ImportData(_QMDDataBase)
+                Case Windows.Forms.DialogResult.No
+                    ImportMultipleQMDFiles(True)
+                Case Windows.Forms.DialogResult.Cancel
+            End Select
+        Else
+            ImportMultipleQMDFiles(True)
+        End If
     End Sub
 End Class
